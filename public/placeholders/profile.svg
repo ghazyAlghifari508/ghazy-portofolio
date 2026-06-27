@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-label="Pas foto placeholder">
+  <rect width="480" height="480" fill="#14140f"/>
+  <circle cx="240" cy="190" r="80" fill="#beff50"/>
+  <path d="M120 400 q120 -150 240 0 Z" fill="#beff50"/>
+  <text x="240" y="450" font-family="Arial,sans-serif" font-size="18" fill="#f5f5eb" text-anchor="middle">Pas foto kamu</text>
+</svg>

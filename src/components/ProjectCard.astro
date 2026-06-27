@@ -1,0 +1,75 @@
+---
+import type { CollectionEntry } from "astro:content";
+import TechBadge from "./TechBadge.astro";
+import Icon from "./Icon.astro";
+
+/**
+ * ProjectCard — DESIGN.md white feature card: 26px radius, no shadow.
+ * Equal height in a grid via h-full + flex column; blurb clamped to 3 lines
+ * so every card lines up regardless of copy length. Whole card links to detail.
+ */
+interface Props {
+  project: CollectionEntry<"projects">["data"];
+}
+const { project } = Astro.props;
+const { id, title, blurb, stack, image, liveUrl } = project;
+---
+
+<article
+  class="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[var(--text-primary)] focus-within:-translate-y-1 motion-reduce:transform-none"
+>
+  <div class="aspect-[16/10] w-full overflow-hidden bg-[var(--surface-section)]">
+    <img
+      src={image}
+      alt={`Preview of ${title}`}
+      width="640"
+      height="400"
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transform-none"
+    />
+    {
+      liveUrl && (
+        <span class="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-[var(--radius-badge)] bg-electric-lime px-2.5 py-1 text-[12px] font-medium text-near-black">
+          <span class="h-1.5 w-1.5 rounded-full bg-near-black" />
+          Live
+        </span>
+      )
+    }
+  </div>
+
+  <div class="flex flex-1 flex-col gap-4 p-6">
+    <h3 class="text-xl font-medium text-[var(--text-primary)]">
+      <a href={`/projects/${id}`} class="after:absolute after:inset-0">
+        {title}
+      </a>
+    </h3>
+    <p
+      class="line-clamp-3 flex-1 text-[15px] leading-relaxed text-[var(--text-secondary)]"
+    >
+      {blurb}
+    </p>
+
+    <ul class="flex flex-wrap gap-2">
+      {stack.slice(0, 3).map((s) => <li><TechBadge name={s} /></li>)}
+      {
+        stack.length > 3 && (
+          <li>
+            <TechBadge name={`+${stack.length - 3}`} />
+          </li>
+        )
+      }
+    </ul>
+
+    <span
+      class="mt-1 inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--text-primary)]"
+    >
+      View case study
+      <Icon
+        name="arrow-right"
+        size={15}
+        class="transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none"
+      />
+    </span>
+  </div>
+</article>

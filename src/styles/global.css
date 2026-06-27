@@ -1,0 +1,174 @@
+/* Cabinet Grotesk — OTSono substitute (DESIGN.md), served via Fontshare CDN.
+   Must precede the tailwindcss import (CSS @import ordering rule). */
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap");
+@import "tailwindcss";
+
+/* class-based dark mode toggle */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors — from DESIGN.md */
+  --color-electric-lime: #beff50;
+  --color-near-black: #14140f;
+  --color-pure-black: #000000;
+  --color-pure-white: #ffffff;
+  --color-warm-cream: #f5f5eb;
+  --color-parchment-card: #fafaf5;
+  --color-stone: #d2d2c8;
+  --color-graphite: #6e6e64;
+  --color-charcoal: #30302a;
+  --color-slate-border: #919183;
+  --color-signal-blue: #144fcc;
+  --color-coral-alert: #eb3131;
+  --color-mint-confirm: #1dc479;
+
+  /* Typography — Cabinet Grotesk bound to OTSono slot */
+  --font-otsono: "Cabinet Grotesk", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Type scale */
+  --text-caption: 10px;
+  --text-caption--line-height: 1.5;
+  --text-body: 16px;
+  --text-body--line-height: 1.5;
+  --text-subheading: 20px;
+  --text-subheading--line-height: 1.4;
+  --text-heading-sm: 30px;
+  --text-heading-sm--line-height: 1.2;
+  --text-heading: 40px;
+  --text-heading--line-height: 1.1;
+  --text-heading-lg: 64px;
+  --text-heading-lg--line-height: 1;
+  --text-heading-lg--letter-spacing: -1.92px;
+  --text-display: 90px;
+  --text-display--line-height: 0.89;
+  --text-display--letter-spacing: -2.7px;
+
+  /* Spacing: keep Tailwind's default numeric scale (--spacing base = 0.25rem).
+     DESIGN.md's named spacing values are multiples of 8 already covered by it;
+     defining --spacing-N here would hijack w-N/p-N utilities to literal px. */
+
+  /* Border radius — DESIGN.md shape language */
+  --radius-badge: 8px;
+  --radius-card: 26px;
+
+  /* Layout */
+  --page-max-width: 1200px;
+}
+
+/* ── Semantic surface tokens (theme-aware) ───────────────────────────────
+   DESIGN.md is light-first; dark variants reuse the warm achromatic scale.
+   Hierarchy is by background VALUE only — no shadows (DESIGN.md elevation). */
+:root {
+  --surface-ground: var(--color-warm-cream); /* page bg */
+  --surface-section: var(--color-parchment-card); /* nested section */
+  --surface-card: var(--color-pure-white); /* elevated card */
+  --surface-dark: var(--color-near-black); /* dark feature card */
+  --text-primary: var(--color-near-black);
+  --text-secondary: var(--color-graphite);
+  --border-subtle: var(--color-stone);
+}
+
+.dark {
+  --surface-ground: var(--color-near-black);
+  --surface-section: var(--color-charcoal);
+  --surface-card: var(--color-charcoal);
+  --surface-dark: #0d0d0a;
+  --text-primary: var(--color-warm-cream);
+  --text-secondary: #a8a89c; /* warm gray, >=4.5:1 on near-black */
+  --border-subtle: #3f3f38;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-otsono);
+    background-color: var(--surface-ground);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    min-height: 100dvh;
+  }
+  /* visible focus for keyboard nav (a11y) */
+  :focus-visible {
+    outline: 2px solid var(--color-near-black);
+    outline-offset: 2px;
+  }
+  .dark :focus-visible {
+    outline-color: var(--color-electric-lime);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  @media (min-width: 1024px) {
+    .sidebar-collapsed #mobile-drawer {
+      width: 5rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    .sidebar-collapsed .sidebar-label,
+    .sidebar-collapsed .sidebar-brand {
+      display: none;
+    }
+    .sidebar-collapsed #mobile-drawer nav a,
+    .sidebar-collapsed #mobile-drawer > div:first-child {
+      justify-content: center;
+    }
+  }
+
+  /* Scroll reveal — element fades+rises when [data-reveal] gains .is-visible
+     (toggled by IntersectionObserver). Hidden state only applies when JS is on
+     so no-JS users still see content. */
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out;
+  }
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js [data-reveal] {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Marquee — continuous horizontal scroll for the skills track.
+     Track holds two identical lists; translating -50% loops seamlessly. */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-marquee {
+    animation: marquee var(--marquee-duration, 40s) linear infinite;
+  }
+  .marquee-group:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+      transform: none;
+    }
+  }
+}

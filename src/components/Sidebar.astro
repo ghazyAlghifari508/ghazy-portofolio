@@ -1,0 +1,157 @@
+---
+import Icon from "./Icon.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+
+/**
+ * Sidebar — persistent left nav on desktop (>=1024px), off-canvas drawer on mobile.
+ * Active route highlighted via Astro.url.pathname.
+ */
+const path = Astro.url.pathname;
+const norm = (p: string) => (p !== "/" && p.endsWith("/") ? p.slice(0, -1) : p);
+const here = norm(path);
+
+const links = [
+  { href: "/", label: "Home", icon: "home" },
+  { href: "/about", label: "About", icon: "user" },
+  { href: "/projects", label: "Projects", icon: "folder-code" },
+  { href: "/certificates", label: "Certificates", icon: "award" },
+  { href: "/skills", label: "Skills", icon: "wrench" },
+  { href: "/experience", label: "Experience", icon: "briefcase" },
+  { href: "/contact", label: "Contact", icon: "mail" },
+] as const;
+
+const isActive = (href: string) =>
+  href === "/" ? here === "/" : here === href || here.startsWith(href + "/");
+---
+
+<!-- Mobile top bar -->
+<header
+  class="sticky top-0 z-40 flex items-center justify-between border-b border-[var(--border-subtle)] bg-[var(--surface-ground)] px-4 py-3 lg:hidden"
+>
+  <a href="/" class="text-lg font-bold tracking-tight text-[var(--text-primary)]"
+    >ghazy<span class="text-electric-lime">+</span></a
+  >
+  <div class="flex items-center gap-2">
+    <ThemeToggle />
+    <button
+      id="nav-open"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-subtle)] text-[var(--text-primary)]"
+    >
+      <Icon name="menu" size={22} />
+    </button>
+  </div>
+</header>
+
+<!-- Scrim -->
+<div
+  id="nav-scrim"
+  class="fixed inset-0 z-40 hidden bg-near-black/50 lg:hidden"
+  aria-hidden="true"
+></div>
+
+<!-- Sidebar / drawer -->
+<aside
+  id="mobile-drawer"
+  class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col border-r border-[var(--border-subtle)] bg-[var(--surface-ground)] p-6 transition-[width,transform,padding] duration-300 ease-out lg:sticky lg:top-0 lg:h-dvh lg:w-64 lg:translate-x-0"
+>
+  <div class="mb-8 flex items-center justify-between">
+    <a
+      href="/"
+      class="sidebar-brand text-2xl font-bold tracking-tight text-[var(--text-primary)]"
+      >ghazy<span class="text-electric-lime">+</span></a
+    >
+    <button
+      id="sidebar-toggle"
+      type="button"
+      aria-label="Collapse sidebar"
+      aria-expanded="true"
+      class="hidden h-11 w-11 items-center justify-center rounded-full border border-[var(--border-subtle)] text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-section)] lg:inline-flex"
+    >
+      <Icon name="menu" size={20} />
+    </button>
+    <button
+      id="nav-close"
+      type="button"
+      aria-label="Close menu"
+      class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-subtle)] text-[var(--text-primary)] lg:hidden"
+    >
+      <Icon name="x" size={20} />
+    </button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="flex-1">
+    <ul class="flex flex-col gap-1">
+      {
+        links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              class:list={[
+                "flex min-h-11 items-center gap-3 rounded-[var(--radius-card)] px-4 text-[15px] font-medium transition-colors",
+                isActive(l.href)
+                  ? "bg-near-black text-pure-white dark:bg-electric-lime dark:text-near-black"
+                  : "text-[var(--text-primary)] hover:bg-[var(--surface-section)]",
+              ]}
+            >
+              <Icon name={l.icon} size={18} class="shrink-0" />
+              <span class="sidebar-label">{l.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <div
+    class="mt-6 hidden items-center justify-between border-t border-[var(--border-subtle)] pt-6 lg:flex"
+  >
+    <span class="sidebar-label text-[13px] text-[var(--text-secondary)]">Theme</span>
+    <ThemeToggle />
+  </div>
+</aside>
+
+<script>
+  const drawer = document.getElementById("mobile-drawer");
+  const scrim = document.getElementById("nav-scrim");
+  const openBtn = document.getElementById("nav-open");
+  const closeBtn = document.getElementById("nav-close");
+
+  const open = () => {
+    drawer?.classList.remove("-translate-x-full");
+    scrim?.classList.remove("hidden");
+    openBtn?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  };
+  const close = () => {
+    drawer?.classList.add("-translate-x-full");
+    scrim?.classList.add("hidden");
+    openBtn?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  const setCollapsed = (collapsed) => {
+    document.documentElement.classList.toggle("sidebar-collapsed", collapsed);
+    sidebarToggle?.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    sidebarToggle?.setAttribute(collapsed ? "aria-label" : "aria-label", collapsed ? "Expand sidebar" : "Collapse sidebar");
+    localStorage.setItem("sidebar", collapsed ? "collapsed" : "expanded");
+  };
+  setCollapsed(localStorage.getItem("sidebar") === "collapsed");
+
+  openBtn?.addEventListener("click", open);
+  closeBtn?.addEventListener("click", close);
+  sidebarToggle?.addEventListener("click", () => {
+    setCollapsed(!document.documentElement.classList.contains("sidebar-collapsed"));
+  });
+  scrim?.addEventListener("click", close);
+  document.addEventListener("keydown", (e) => e.key === "Escape" && close());
+  // close after navigating on mobile
+  drawer
+    ?.querySelectorAll("nav a")
+    .forEach((a) => a.addEventListener("click", close));
+</script>

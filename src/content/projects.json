@@ -1,0 +1,272 @@
+[
+  {
+    "id": "novaplan-ai",
+    "title": "NovaPlan AI",
+    "blurb": "An AI-powered SaaS workspace that turns rough ideas into industry-standard Product Requirements Documents in minutes.",
+    "description": "NovaPlan AI is a modern SaaS workspace built to help product managers, developers, and founders draft industry-standard Product Requirements Documents in minutes instead of days. It pairs a conversational AI engine with a full Markdown editor and version control, so teams can move from a vague idea to a structured spec without leaving the browser.",
+    "features": [
+      "Conversational AI engine for brainstorming and generating technical and business specs",
+      "Markdown PRD editor with live preview, syntax highlighting, and Mermaid diagram rendering",
+      "Built-in version history with automatic versioning, rollback, and diff tracking",
+      "Project workspaces with folders, search, and filtering to keep documents organized"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2025",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind v4"
+    ],
+    "tags": [
+      "AI",
+      "SaaS",
+      "Full-stack"
+    ],
+    "image": "/foto/novaplanai.png",
+    "repoUrl": "https://github.com/ghazyAlghifari508/novaplan-ai",
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "gradready",
+    "title": "GradReady",
+    "blurb": "An AI-driven career-readiness platform helping students and fresh graduates bridge the gap from campus to industry.",
+    "description": "GradReady is an end-to-end career preparation platform that uses AI to guide students and fresh graduates through the transition into professional life. It analyzes resumes, maps personalized learning paths, and simulates real interviews so users can identify and close their skill gaps with confidence.",
+    "features": [
+      "AI CV analyzer that scores resumes and returns ATS-friendly improvement suggestions",
+      "Personalized career roadmap and learning-path generator based on target roles",
+      "Skill-gap analysis comparing current abilities against desired job requirements",
+      "AI-powered mock interviews with speech recognition for realistic practice",
+      "Role-based admin panel for managing job resources, scoring parameters, and analytics"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2025",
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Prisma",
+      "Supabase",
+      "Better Auth"
+    ],
+    "tags": [
+      "AI",
+      "EdTech",
+      "Full-stack"
+    ],
+    "image": "/foto/gradready.png",
+    "repoUrl": "https://github.com/ghazyAlghifari508/gradready-apps",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "genting",
+    "title": "Genting",
+    "blurb": "A preventive health platform that supports parents through a child's first 1,000 days to help reduce stunting.",
+    "description": "Genting (Generasi Anti Stunting) is a preventive health platform designed to accompany expecting mothers and parents through the critical first 1,000 days of a child's life. It combines artificial intelligence, gamification, and telemedicine into an interactive experience aimed at lowering stunting rates across Indonesia.",
+    "features": [
+      "AI nutrition insight that analyzes meal photos and recommends balanced intake in real time",
+      "Gamified growth roadmap with daily quests, journaling, XP, and achievement badges",
+      "Telemedicine access connecting parents with health professionals",
+      "Growth tracking aligned with the 1,000-days-of-life framework"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2025",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Supabase",
+      "Framer Motion"
+    ],
+    "tags": [
+      "AI",
+      "HealthTech",
+      "Gamification"
+    ],
+    "image": "/foto/genting.png",
+    "repoUrl": "https://github.com/ghazyAlghifari508/genting-apps",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "prime-property",
+    "title": "Prime Property",
+    "blurb": "A two-tier real-estate platform pairing a luxury public site with a role-based internal agent portal.",
+    "description": "Prime Property is a two-layer real-estate application that combines a polished, luxury-editorial public website with a secure internal portal for agents. The public side markets featured listings, while the internal dashboard gives staff role-based tools to manage inventory, complete with audit trails and safe deletion.",
+    "features": [
+      "Luxury-editorial public pages: landing, featured properties, about, and contact",
+      "Internal agent portal with session-based authentication and httpOnly cookies",
+      "Listing dashboard with pagination, sorting, filtering, search, and shareable query params",
+      "Role-based access control for Admin (read) and Superadmin (full CRUD + admin management)",
+      "Soft delete and audit logging for every property change"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2025",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind v4"
+    ],
+    "tags": [
+      "Full-stack",
+      "Dashboard",
+      "RBAC"
+    ],
+    "image": "/foto/prime-property.png",
+    "liveUrl": "https://prime-property-nova.vercel.app",
+    "repoUrl": "https://github.com/ghazyAlghifari508/prime-property",
+    "featured": false,
+    "order": 4
+  },
+  {
+    "id": "hl-finance",
+    "title": "HL Finance",
+    "blurb": "An internal sales and receivables system for tracking transactions, debts, bonuses, and reporting on a cash basis.",
+    "description": "HL Finance is an internal management application for handling a business's customers, products, transactions, receivables, bonuses, and reports. It follows cash-basis accounting, recognizing revenue, profit, and bonus eligibility only once a transaction is fully settled, and supports PDF export for clean recaps.",
+    "features": [
+      "Customer, product, and transaction (invoice) management in one place",
+      "Receivables and bonus tracking with cash-basis recognition on settlement",
+      "Reporting and recaps with PDF export via @react-pdf/renderer",
+      "Zod-validated forms and Supabase-backed authentication"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2025",
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Supabase",
+      "Prisma",
+      "shadcn/ui"
+    ],
+    "tags": [
+      "FinTech",
+      "Dashboard",
+      "Full-stack"
+    ],
+    "image": "/placeholders/project-hl-finance.svg",
+    "repoUrl": "https://github.com/ghazyAlghifari508/hl-finance",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "ocean-guard",
+    "title": "OClean Dive",
+    "blurb": "An immersive 3D web experience that builds empathy and awareness around ocean plastic pollution.",
+    "description": "OClean Dive is an interactive, web-based education platform created to raise public awareness of the marine plastic-pollution crisis in Indonesia and beyond. Through an immersive 3D marine-life rescue simulation, it transforms scientific data into an empathetic experience that motivates small, lasting changes in daily habits. Built as a team project at Telkom University.",
+    "features": [
+      "Immersive 3D marine-life rescue simulation built with Three.js",
+      "Premium editorial interface translating scientific data into a visual narrative",
+      "Smooth motion design using Framer Motion and Lottie animations",
+      "Conservation-focused storytelling on sustainable technology themes"
+    ],
+    "role": "Frontend Developer (Team Project)",
+    "year": "2024",
+    "stack": [
+      "React 19",
+      "Vite",
+      "Three.js",
+      "Tailwind",
+      "Framer Motion"
+    ],
+    "tags": [
+      "3D",
+      "Education",
+      "Frontend"
+    ],
+    "image": "/foto/ocleandive.png",
+    "liveUrl": "https://oclean-dive-seven.vercel.app",
+    "repoUrl": "https://github.com/ghazyAlghifari508/clean-ocean",
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "sobatbatik",
+    "title": "SobatBatik",
+    "blurb": "A web platform for exploring and learning about Indonesian batik, with a decoupled frontend and backend.",
+    "description": "SobatBatik is a web platform dedicated to exploring and preserving Indonesian batik culture. It pairs a modern, responsive frontend with a separate backend service to deliver information and discovery features around batik motifs and heritage.",
+    "features": [
+      "Modern, responsive frontend for browsing batik content",
+      "Decoupled architecture with a dedicated backend service",
+      "Type-safe React + TypeScript codebase",
+      "Cultural-heritage focused information and discovery"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2025",
+    "stack": [
+      "React 19",
+      "Vite",
+      "TypeScript",
+      "Tailwind v4"
+    ],
+    "tags": [
+      "Full-stack",
+      "Culture",
+      "Web App"
+    ],
+    "image": "/placeholders/project-sobatbatik.svg",
+    "repoUrl": "https://github.com/ghazyAlghifari508/SobatBatik",
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "anpundung",
+    "title": "Anpundung",
+    "blurb": "A public reporting and information platform connecting citizens with administrators through role-based access.",
+    "description": "Anpundung is a web-based platform that helps the public access official news, submit reports about issues in their surroundings, and improve transparency between citizens and administrators. Built with Laravel and Inertia.js, it separates access into citizen and admin roles for clear responsibility boundaries.",
+    "features": [
+      "Citizen role for reading official news and submitting community reports",
+      "Admin role for managing news, verifying reports, and following up on issues",
+      "Role-based access control across the application",
+      "Server-driven SPA experience powered by Laravel and Inertia.js"
+    ],
+    "role": "Full-Stack Developer (Team Project)",
+    "year": "2024",
+    "stack": [
+      "Laravel 12",
+      "Inertia.js",
+      "React 19",
+      "Tailwind"
+    ],
+    "tags": [
+      "Full-stack",
+      "GovTech",
+      "RBAC"
+    ],
+    "image": "/foto/annpundung.png",
+    "liveUrl": "https://annpundung.sisteminformasikotacerdas.id",
+    "repoUrl": "https://github.com/Fadli-Sgrd/Anpundung-Laravel",
+    "featured": false,
+    "order": 8
+  },
+  {
+    "id": "react-movie",
+    "title": "React Movie App",
+    "blurb": "A fast, responsive movie-discovery app for browsing, searching, and saving favorite films.",
+    "description": "React Movie App is a modern interface for discovering, exploring, and saving favorite movies. It delivers a fast and interactive experience for finding popular, top-rated, and upcoming titles, with real-time search and local favorites, and demonstrates clean frontend engineering with React, Tailwind CSS, and Vite.",
+    "features": [
+      "Browse popular, top-rated, and upcoming movies",
+      "Real-time title search",
+      "Save favorites persisted in the browser",
+      "Dark and light theme switching, fully responsive across devices"
+    ],
+    "role": "Frontend Developer",
+    "year": "2024",
+    "stack": [
+      "React 19",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "tags": [
+      "Frontend",
+      "API",
+      "SPA"
+    ],
+    "image": "/foto/react-movie.png",
+    "liveUrl": "https://react-movie-app-beta-orcin.vercel.app",
+    "repoUrl": "https://github.com/ghazyAlghifari508/react-movie-app",
+    "featured": false,
+    "order": 9
+  }
+]

@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import TechBadge from "../components/TechBadge.astro";
+import Marquee from "../components/Marquee.astro";
+
+const groups = await getCollection("skills");
+const techStack = [...new Set(groups.flatMap((g) => g.data.items))];
+---
+
+<BaseLayout title="Skills — Ghazy Nabil Alghifari">
+  <SectionHeading
+    eyebrow="Technical stack"
+    title="Skills & Tools"
+    subtitle="Technologies I use to design, build, and ship modern web applications across frontend, backend, databases, and AI integrations."
+  />
+
+  <section data-reveal class="mb-10 space-y-3">
+    <Marquee items={techStack} duration={42} />
+    <Marquee items={[...techStack].reverse()} duration={50} reverse />
+  </section>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    {
+      groups.map((g, i) => (
+        <section
+          data-reveal
+          data-reveal-delay={i * 80}
+          class="rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] p-6 sm:p-8"
+        >
+          <h2 class="mb-5 text-xl font-medium text-[var(--text-primary)]">
+            {g.data.category}
+          </h2>
+          <ul class="flex flex-wrap gap-2">
+            {g.data.items.map((item) => (
+              <li>
+                <TechBadge name={item} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>

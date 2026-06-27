@@ -1,0 +1,150 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Badge from "../../components/Badge.astro";
+import TechBadge from "../../components/TechBadge.astro";
+import Icon from "../../components/Icon.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((p) => ({ params: { id: p.id }, props: { data: p.data } }));
+}
+
+const { data } = Astro.props;
+const {
+  title,
+  description,
+  features,
+  role,
+  year,
+  stack,
+  tags,
+  image,
+  liveUrl,
+  repoUrl,
+} = data;
+---
+
+<BaseLayout title={`${title} — Ghazy Nabil Alghifari`} description={description}>
+  <a
+    href="/projects"
+    class="mb-8 inline-flex items-center gap-2 text-[15px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+  >
+    <Icon name="arrow-right" size={16} class="rotate-180" />
+    Back to projects
+  </a>
+
+  <article data-reveal>
+    <div class="flex flex-wrap items-center gap-2">
+      {tags.map((t) => <Badge variant="lime">{t}</Badge>)}
+    </div>
+    <h1
+      class="mt-4 text-4xl font-medium leading-[1.05] tracking-[-1px] text-[var(--text-primary)] sm:text-5xl md:text-6xl"
+    >
+      {title}
+    </h1>
+    <p
+      class="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--text-secondary)]"
+    >
+      {description}
+    </p>
+
+    <div class="mt-7 flex flex-wrap gap-3">
+      {
+        liveUrl && (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex min-h-12 items-center gap-2 rounded-[var(--radius-card)] bg-electric-lime px-6 font-medium text-near-black ring-1 ring-near-black transition-colors hover:bg-[#aef03c]"
+          >
+            Visit live site
+            <Icon name="external-link" size={17} />
+          </a>
+        )
+      }
+      {
+        repoUrl && (
+          <a
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex min-h-12 items-center gap-2 rounded-[var(--radius-card)] border border-[var(--text-primary)] px-6 font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-section)]"
+          >
+            <Icon name="github" size={17} />
+            Source code
+          </a>
+        )
+      }
+    </div>
+  </article>
+
+  <div
+    data-reveal
+    data-reveal-delay="80"
+    class="mt-10 overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-section)]"
+  >
+    <img
+      src={image}
+      alt={`Preview of ${title}`}
+      width="640"
+      height="400"
+      class="aspect-[16/10] w-full object-cover"
+    />
+  </div>
+
+  <div class="mt-12 grid gap-10 md:grid-cols-[1.6fr_1fr]">
+    <section data-reveal>
+      <h2 class="text-2xl font-medium text-[var(--text-primary)]">
+        Key features
+      </h2>
+      <ul class="mt-5 space-y-3">
+        {
+          features.map((f) => (
+            <li class="flex gap-3 text-[var(--text-secondary)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-electric-lime" />
+              <span class="leading-relaxed">{f}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <aside data-reveal data-reveal-delay="80" class="space-y-6">
+      {
+        (role || year) && (
+          <div class="rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] p-6">
+            {role && (
+              <div>
+                <p class="text-[13px] uppercase tracking-[0.08em] text-[var(--text-secondary)]">
+                  Role
+                </p>
+                <p class="mt-1 font-medium text-[var(--text-primary)]">{role}</p>
+              </div>
+            )}
+            {year && (
+              <div class="mt-4">
+                <p class="text-[13px] uppercase tracking-[0.08em] text-[var(--text-secondary)]">
+                  Year
+                </p>
+                <p class="mt-1 font-medium text-[var(--text-primary)]">{year}</p>
+              </div>
+            )}
+          </div>
+        )
+      }
+      <div
+        class="rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] p-6"
+      >
+        <p
+          class="text-[13px] uppercase tracking-[0.08em] text-[var(--text-secondary)]"
+        >
+          Tech stack
+        </p>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          {stack.map((s) => <li><TechBadge name={s} /></li>)}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>

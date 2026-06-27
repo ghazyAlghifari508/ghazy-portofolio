@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" role="img" aria-label="Placeholder sertifikat 3">
+  <rect width="600" height="420" fill="#f5f5eb"/>
+  <rect x="30" y="30" width="540" height="360" rx="26" fill="#ffffff" stroke="#d2d2c8" stroke-width="2"/>
+  <circle cx="300" cy="180" r="46" fill="#beff50"/>
+  <path d="M300 200 l1.5 9 l-5.5-4 l-5.5 4 l1.5-9 Z" fill="#14140f" transform="translate(0,-6) scale(1.6)" transform-origin="300 180"/>
+  <text x="300" y="300" font-family="Arial,sans-serif" font-size="20" fill="#14140f" text-anchor="middle" font-weight="600">Sertifikat 3</text>
+  <text x="300" y="330" font-family="Arial,sans-serif" font-size="14" fill="#6e6e64" text-anchor="middle">Ganti dengan gambar aslimu</text>
+</svg>

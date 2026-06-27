@@ -1,0 +1,119 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Icon from "../components/Icon.astro";
+
+const projects = (await getCollection("projects"))
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="grid items-center gap-10 md:grid-cols-[1.4fr_1fr]">
+    <div data-reveal>
+      <p class="mb-3 text-lg text-[var(--text-secondary)]">Hi, I'm</p>
+      <h1
+        class="text-5xl font-medium leading-[0.92] tracking-[-2px] text-[var(--text-primary)] sm:text-6xl lg:text-7xl"
+      >
+        Ghazy Nabil<br />Alghifari
+      </h1>
+      <p
+        class="mt-5 text-xl font-medium text-[var(--text-primary)] sm:text-2xl"
+      >
+        Full-Stack Web Developer
+      </p>
+      <p
+        class="mt-6 max-w-xl text-lg leading-relaxed text-[var(--text-secondary)]"
+      >
+        IT enthusiast based in Bandung, Indonesia, with a strong interest in
+        full-stack development and AI-driven applications. I enjoy turning
+        real-world problems into clean, fast, and meaningful digital products —
+        and I'm always learning along the way.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="/projects"
+          class="inline-flex min-h-12 items-center gap-2 rounded-[var(--radius-card)] bg-electric-lime px-6 text-base font-medium text-near-black ring-1 ring-near-black transition-colors hover:bg-[#aef03c]"
+        >
+          View Projects
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex min-h-12 items-center gap-2 rounded-[var(--radius-card)] border border-[var(--text-primary)] px-6 text-base font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-section)]"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <div data-reveal data-reveal-delay="100" class="order-first md:order-last">
+      <img
+        src="/placeholders/profile.svg"
+        alt="Portrait of Ghazy Nabil Alghifari"
+        width="480"
+        height="480"
+        class="mx-auto aspect-square w-56 rounded-[var(--radius-card)] sm:w-72 md:w-full"
+      />
+    </div>
+  </section>
+
+  <!-- Featured projects -->
+  <section class="mt-20 sm:mt-28">
+    <div data-reveal class="mb-8 flex items-end justify-between gap-4">
+      <div>
+        <p
+          class="mb-2 text-[13px] font-medium uppercase tracking-[0.10em] text-[var(--text-secondary)]"
+        >
+          Selected work
+        </p>
+        <h2 class="text-3xl font-medium text-[var(--text-primary)] sm:text-4xl">
+          Featured Projects
+        </h2>
+      </div>
+      <a
+        href="/projects"
+        class="hidden shrink-0 items-center gap-1 text-[15px] font-medium text-[var(--text-primary)] underline-offset-4 hover:underline sm:inline-flex"
+      >
+        All projects
+        <Icon name="arrow-up-right" size={16} />
+      </a>
+    </div>
+    <div class="grid auto-rows-fr gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((p, i) => (
+          <div data-reveal data-reveal-delay={i * 90}>
+            <ProjectCard project={p.data} />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Lime callout -->
+  <section
+    data-reveal
+    class="mt-20 rounded-[var(--radius-card)] bg-electric-lime p-8 sm:mt-28 sm:p-12"
+  >
+    <div class="flex flex-wrap items-center justify-between gap-6">
+      <div>
+        <h2 class="text-3xl font-medium text-near-black sm:text-4xl">
+          Have a project in mind?
+        </h2>
+        <p class="mt-2 max-w-md text-near-black/80">
+          I'm always open to discussing new ideas, collaborations, or
+          opportunities. Let's build something great together.
+        </p>
+      </div>
+      <a
+        href="/contact"
+        class="inline-flex min-h-12 items-center gap-2 rounded-[var(--radius-card)] bg-near-black px-6 text-base font-medium text-pure-white transition-opacity hover:opacity-90"
+      >
+        Start a Conversation
+        <Icon name="arrow-right" size={18} />
+      </a>
+    </div>
+  </section>
+</BaseLayout>

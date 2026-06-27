@@ -1,0 +1,22 @@
+[
+  {
+    "id": "frontend",
+    "category": "Frontend",
+    "items": ["React 19", "Next.js (App Router)", "Astro", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Three.js", "HTML & CSS"]
+  },
+  {
+    "id": "backend",
+    "category": "Backend & Database",
+    "items": ["Laravel", "Node.js", "Prisma ORM", "Supabase", "PostgreSQL", "Better Auth", "REST API"]
+  },
+  {
+    "id": "ai",
+    "category": "AI & Integrations",
+    "items": ["OpenRouter", "LLM Integration", "Prompt Engineering", "AI-assisted Analytics"]
+  },
+  {
+    "id": "tools",
+    "category": "Tools & Workflow",
+    "items": ["Git & GitHub", "Vite", "Vercel", "Zod", "shadcn/ui", "Figma"]
+  }
+]

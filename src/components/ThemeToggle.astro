@@ -1,0 +1,22 @@
+---
+import Icon from "./Icon.astro";
+/** ThemeToggle — flips .dark on <html>, persists to localStorage. */
+---
+
+<button
+  type="button"
+  aria-label="Toggle light or dark theme"
+  class="theme-toggle inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border-subtle)] text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-section)]"
+>
+  <Icon name="sun" size={20} class="hidden dark:block" />
+  <Icon name="moon" size={20} class="block dark:hidden" />
+</button>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  });
+</script>

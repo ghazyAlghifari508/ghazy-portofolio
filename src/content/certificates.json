@@ -1,0 +1,23 @@
+[
+  {
+    "id": "cert-1",
+    "title": "Certificate Name — Replace With Your Credential",
+    "issuer": "Issuing Organization",
+    "date": "2025-01",
+    "image": "/placeholders/cert-1.svg"
+  },
+  {
+    "id": "cert-2",
+    "title": "Certificate Name — Replace With Your Credential",
+    "issuer": "Issuing Organization",
+    "date": "2024-09",
+    "image": "/placeholders/cert-2.svg"
+  },
+  {
+    "id": "cert-3",
+    "title": "Certificate Name — Replace With Your Credential",
+    "issuer": "Issuing Organization",
+    "date": "2024-05",
+    "image": "/placeholders/cert-3.svg"
+  }
+]

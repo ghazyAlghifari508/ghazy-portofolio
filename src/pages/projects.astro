@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const tags = ["All", ...new Set(projects.flatMap((p) => p.data.tags))];
+---
+
+<BaseLayout title="Projects — Ghazy Nabil Alghifari">
+  <SectionHeading
+    eyebrow="Selected work"
+    title="Projects"
+    subtitle="A curated collection of web applications I have designed and built across AI, education, health, finance, culture, and interactive experiences."
+  />
+
+  <div
+    data-reveal
+    id="filter"
+    class="mb-8 flex flex-wrap gap-2 rounded-[var(--radius-card)] bg-stone/60 p-2 dark:bg-charcoal"
+    role="tablist"
+    aria-label="Filter project categories"
+  >
+    {
+      tags.map((t, i) => (
+        <button
+          type="button"
+          data-tag={t}
+          aria-pressed={i === 0 ? "true" : "false"}
+          class="filter-chip min-h-9 rounded-[var(--radius-card)] px-4 text-sm font-medium text-[var(--text-primary)] transition-colors aria-pressed:bg-near-black aria-pressed:text-pure-white dark:aria-pressed:bg-electric-lime dark:aria-pressed:text-near-black"
+        >
+          {t}
+        </button>
+      ))
+    }
+  </div>
+
+  <div id="grid" class="grid auto-rows-fr items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      projects.map((p, i) => (
+        <div
+          data-reveal
+          data-reveal-delay={i * 70}
+          class="project-item h-full"
+          data-tags={p.data.tags.join(",")}
+        >
+          <ProjectCard project={p.data} />
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>
+
+<script>
+  const chips = document.querySelectorAll<HTMLButtonElement>(".filter-chip");
+  const items = document.querySelectorAll<HTMLElement>(".project-item");
+
+  chips.forEach((chip) =>
+    chip.addEventListener("click", () => {
+      const tag = chip.dataset.tag!;
+      chips.forEach((c) =>
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false")
+      );
+      items.forEach((item) => {
+        const show =
+          tag === "All" || (item.dataset.tags ?? "").split(",").includes(tag);
+        item.style.display = show ? "" : "none";
+      });
+    })
+  );
+</script>

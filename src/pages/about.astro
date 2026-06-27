@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Icon from "../components/Icon.astro";
+
+const highlights = [
+  { icon: "folder-code", label: "9+ projects", sub: "Full-stack and frontend applications" },
+  { icon: "sparkles", label: "AI-focused", sub: "LLM-powered workflows and products" },
+  { icon: "wrench", label: "Modern stack", sub: "Next.js · React · Laravel · Supabase" },
+] as const;
+---
+
+<BaseLayout title="About — Ghazy Nabil Alghifari">
+  <SectionHeading
+    eyebrow="About"
+    title="Technology-minded builder focused on practical digital products"
+  />
+
+  <div class="grid gap-10 md:grid-cols-[1fr_1.3fr]">
+    <img
+      data-reveal
+      src="/placeholders/profile.svg"
+      alt="Portrait of Ghazy Nabil Alghifari"
+      width="480"
+      height="480"
+      class="aspect-square w-full max-w-sm rounded-[var(--radius-card)]"
+    />
+    <div data-reveal data-reveal-delay="90" class="space-y-5 text-lg leading-relaxed text-[var(--text-secondary)]">
+      <p>
+        Hello, I'm <strong class="text-[var(--text-primary)] font-medium"
+          >Ghazy Nabil Alghifari</strong
+        >, an IT enthusiast based in Bandung, Indonesia. I have a strong interest
+        in full-stack development, AI-powered applications, and product-focused
+        web experiences that solve real problems with clear, reliable execution.
+      </p>
+      <p>
+        Throughout my learning journey, I have built projects across different
+        domains — from AI SaaS and career-readiness platforms to healthcare,
+        finance dashboards, real-estate portals, and interactive 3D education
+        experiences. These projects helped me sharpen both technical execution
+        and product thinking.
+      </p>
+      <p>
+        I value continuous learning, consistency, teamwork, and the ability to
+        turn ideas into useful digital solutions. Beyond writing code, I care
+        about clarity, maintainability, user experience, and building interfaces
+        that feel polished and professional.
+      </p>
+
+      <div class="grid gap-4 pt-4 sm:grid-cols-3">
+        {
+          highlights.map((h, i) => (
+            <div data-reveal data-reveal-delay={i * 80} class="rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] p-5">
+              <Icon name={h.icon} size={22} class="text-electric-lime" />
+              <p class="mt-3 font-medium text-[var(--text-primary)]">{h.label}</p>
+              <p class="text-sm text-[var(--text-secondary)]">{h.sub}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <section data-reveal class="mt-14 rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] p-6 sm:p-8">
+    <p class="mb-2 text-[13px] font-medium uppercase tracking-[0.10em] text-[var(--text-secondary)]">
+      Education
+    </p>
+    <h2 class="text-2xl font-medium text-[var(--text-primary)]">
+      Telkom University
+    </h2>
+    <p class="mt-2 text-[15px] font-medium text-[var(--text-secondary)]">
+      Student · Bandung, Indonesia
+    </p>
+    <p class="mt-4 max-w-3xl leading-relaxed text-[var(--text-secondary)]">
+      Currently developing a strong foundation in software development, information systems, and technology-driven problem solving while actively building real projects across web development, data-informed products, and AI-assisted applications.
+    </p>
+  </section>
+</BaseLayout>

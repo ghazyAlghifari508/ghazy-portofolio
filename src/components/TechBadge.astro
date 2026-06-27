@@ -1,0 +1,60 @@
+---
+/**
+ * TechBadge — small stack chip with icon. Uses Devicon CDN when available,
+ * falls back to a compact text mark for niche tools.
+ * ponytail: no icon dependency; add mappings only for tech actually shown.
+ */
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className = "" } = Astro.props;
+const key = name.toLowerCase();
+const cdn = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+const match = (s: string) => key.includes(s);
+
+const icon =
+  match("next") ? `${cdn}/nextjs/nextjs-original.svg` :
+  match("react") ? `${cdn}/react/react-original.svg` :
+  match("typescript") ? `${cdn}/typescript/typescript-original.svg` :
+  match("tailwind") ? `${cdn}/tailwindcss/tailwindcss-original.svg` :
+  match("prisma") ? `${cdn}/prisma/prisma-original.svg` :
+  match("supabase") ? `${cdn}/supabase/supabase-original.svg` :
+  match("laravel") ? `${cdn}/laravel/laravel-original.svg` :
+  match("node") ? `${cdn}/nodejs/nodejs-original.svg` :
+  match("postgres") ? `${cdn}/postgresql/postgresql-original.svg` :
+  match("vite") ? `${cdn}/vitejs/vitejs-original.svg` :
+  match("astro") ? `${cdn}/astro/astro-original.svg` :
+  match("three") ? `${cdn}/threejs/threejs-original.svg` :
+  match("html") ? `${cdn}/html5/html5-original.svg` :
+  match("css") ? `${cdn}/css3/css3-original.svg` :
+  match("git") ? `${cdn}/git/git-original.svg` :
+  match("vercel") ? `${cdn}/vercel/vercel-original.svg` :
+  match("figma") ? `${cdn}/figma/figma-original.svg` :
+  match("zod") ? `${cdn}/zod/zod-original.svg` :
+  undefined;
+
+const fallback = name
+  .replace(/\([^)]*\)/g, "")
+  .split(/\s|\.|\/|-/)
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((w) => w[0]?.toUpperCase())
+  .join("") || "•";
+---
+
+<span
+  class={`inline-flex whitespace-nowrap items-center gap-1.5 rounded-[var(--radius-badge)] border border-[var(--border-subtle)] bg-[var(--surface-card)] px-2 py-[3px] text-[13px] font-medium leading-none text-[var(--text-primary)] ${className}`}
+>
+  {
+    icon ? (
+      <img src={icon} alt="" width="14" height="14" loading="lazy" class="h-3.5 w-3.5" />
+    ) : (
+      <span class="inline-flex h-3.5 min-w-3.5 items-center justify-center rounded-[4px] bg-electric-lime px-[3px] text-[9px] font-bold text-near-black">
+        {fallback}
+      </span>
+    )
+  }
+  <slot>{name}</slot>
+</span>

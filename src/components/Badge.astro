@@ -1,0 +1,25 @@
+---
+/**
+ * Badge / status chip — DESIGN.md: 8px radius, OTSono 12-13px weight 500.
+ * variant: neutral | lime | confirm | alert
+ */
+interface Props {
+  variant?: "neutral" | "lime" | "confirm" | "alert";
+  class?: string;
+}
+const { variant = "neutral", class: className = "" } = Astro.props;
+
+const styles: Record<string, string> = {
+  neutral:
+    "bg-[var(--surface-card)] text-[var(--text-primary)] border border-[var(--border-subtle)]",
+  lime: "bg-electric-lime text-near-black",
+  confirm: "bg-mint-confirm text-pure-white",
+  alert: "bg-coral-alert text-pure-white",
+};
+---
+
+<span
+  class={`inline-flex items-center rounded-[var(--radius-badge)] px-2 py-[3px] text-[13px] font-medium leading-none ${styles[variant]} ${className}`}
+>
+  <slot />
+</span>

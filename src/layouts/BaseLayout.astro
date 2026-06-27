@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "Ghazy Nabil Alghifari — Portfolio",
+  description = "Full-stack web developer portfolio showcasing projects, certificates, skills, and selected experience. Built with Astro, Tailwind CSS, and TypeScript.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- set theme + js flag before paint (no FOUC) -->
+    <script is:inline>
+      (() => {
+        const t = localStorage.getItem("theme");
+        const dark =
+          t === "dark" ||
+          (!t && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (dark) document.documentElement.classList.add("dark");
+        document.documentElement.classList.add("js");
+      })();
+    </script>
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-[var(--radius-card)] focus:bg-electric-lime focus:px-4 focus:py-2 focus:text-near-black"
+      >Skip to content</a
+    >
+    <div class="lg:flex">
+      <Sidebar />
+      <main
+        id="main"
+        class="min-w-0 flex-1 px-5 py-10 sm:px-8 lg:px-12 lg:py-16"
+      >
+        <div class="mx-auto w-full max-w-[var(--page-max-width)]">
+          <slot />
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Scroll reveal: add .is-visible when [data-reveal] enters viewport.
+      const els = document.querySelectorAll("[data-reveal]");
+      if ("IntersectionObserver" in window && els.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                const el = e.target as HTMLElement;
+                const delay = el.dataset.revealDelay;
+                if (delay) el.style.transitionDelay = `${delay}ms`;
+                el.classList.add("is-visible");
+                io.unobserve(el);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+        );
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>

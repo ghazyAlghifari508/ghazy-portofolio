@@ -1,0 +1,24 @@
+[
+  {
+    "id": "exp-1",
+    "role": "Project-Based Web Developer",
+    "org": "Freelance / Personal Projects",
+    "start": "2024-01",
+    "summary": "Built a range of full-stack web applications across AI SaaS, healthcare, finance dashboards, public reporting, real estate, and interactive education. Worked with modern stacks including Next.js, React, Laravel, Supabase, Prisma, and Tailwind CSS."
+  },
+  {
+    "id": "exp-2",
+    "role": "Frontend Developer — OClean Dive",
+    "org": "Telkom University Team Project",
+    "start": "2024-06",
+    "end": "2024-09",
+    "summary": "Collaborated on an immersive ocean-conservation education platform using React, Three.js, Tailwind CSS, and motion-driven storytelling to raise awareness about marine plastic pollution."
+  },
+  {
+    "id": "exp-3",
+    "role": "Student",
+    "org": "Telkom University",
+    "start": "2023-08",
+    "summary": "Focused on software development, problem solving, and building practical web-based solutions while continuously improving technical, collaboration, and product-thinking skills."
+  }
+]

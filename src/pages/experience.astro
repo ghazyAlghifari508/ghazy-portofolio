@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+
+const items = (await getCollection("experience")).sort((a, b) =>
+  b.data.start.localeCompare(a.data.start)
+);
+
+const fmt = (d?: string) => {
+  if (!d) return "Present";
+  const [y, m] = d.split("-");
+  const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return m ? `${months[+m]} ${y}` : y;
+};
+---
+
+<BaseLayout title="Experience — Ghazy Nabil Alghifari">
+  <SectionHeading
+    eyebrow="Journey"
+    title="Experience"
+    subtitle="A concise overview of my project-based experience, collaboration work, and academic journey."
+  />
+
+  <ol class="relative ml-3 border-l border-[var(--border-subtle)]">
+    {
+      items.map((it, i) => (
+        <li data-reveal data-reveal-delay={i * 80} class="mb-10 ml-6">
+          <span class="absolute -left-[7px] mt-1.5 h-3.5 w-3.5 rounded-full bg-electric-lime ring-2 ring-[var(--surface-ground)]" />
+          <p class="text-[13px] font-medium uppercase tracking-[0.08em] text-[var(--text-secondary)]">
+            {fmt(it.data.start)} — {fmt(it.data.end)}
+          </p>
+          <h2 class="mt-1 text-xl font-medium text-[var(--text-primary)]">
+            {it.data.role}
+          </h2>
+          <p class="text-[15px] font-medium text-[var(--text-secondary)]">
+            {it.data.org}
+          </p>
+          <p class="mt-2 max-w-2xl leading-relaxed text-[var(--text-secondary)]">
+            {it.data.summary}
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Icon from "../components/Icon.astro";
+
+const certs = (await getCollection("certificates")).sort((a, b) =>
+  b.data.date.localeCompare(a.data.date)
+);
+
+const fmt = (d: string) => {
+  const [y, m] = d.split("-");
+  const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return m ? `${months[+m]} ${y}` : y;
+};
+---
+
+<BaseLayout title="Certificates — Ghazy Nabil Alghifari">
+  <SectionHeading
+    eyebrow="Credentials"
+    title="Certificates"
+    subtitle="Selected certifications and learning milestones that support my technical growth. Replace the placeholder cards with your real credentials when ready."
+  />
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      certs.map((c, i) => (
+        <article data-reveal data-reveal-delay={i * 80} class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)]">
+          <img
+            src={c.data.image}
+            alt={`Certificate: ${c.data.title}`}
+            width="600"
+            height="420"
+            loading="lazy"
+            class="aspect-[10/7] w-full object-cover"
+          />
+          <div class="space-y-2 p-6">
+            <h2 class="font-medium text-[var(--text-primary)]">{c.data.title}</h2>
+            <p class="text-sm text-[var(--text-secondary)]">{c.data.issuer}</p>
+            <p class="text-[13px] text-[var(--text-secondary)]">{fmt(c.data.date)}</p>
+            {c.data.url && (
+              <a href={c.data.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 pt-1 text-sm font-medium text-[var(--text-primary)] underline-offset-4 hover:underline">
+                View credential
+                <Icon name="external-link" size={14} />
+              </a>
+            )}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</BaseLayout>

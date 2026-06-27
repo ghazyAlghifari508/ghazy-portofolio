@@ -1,0 +1,33 @@
+---
+import TechBadge from "./TechBadge.astro";
+
+/**
+ * Marquee — seamless infinite horizontal scroll. Duplicates items so the
+ * -50% translate loops without a gap. Pauses on hover; disabled under
+ * prefers-reduced-motion (handled in global.css).
+ */
+interface Props {
+  items: string[];
+  duration?: number;
+  reverse?: boolean;
+}
+const { items, duration = 40, reverse = false } = Astro.props;
+const doubled = [...items, ...items];
+---
+
+<div
+  class="marquee-group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+>
+  <ul
+    class="animate-marquee flex w-max items-center gap-3"
+    style={`--marquee-duration:${duration}s;${reverse ? "animation-direction:reverse;" : ""}`}
+  >
+    {
+      doubled.map((item, i) => (
+        <li aria-hidden={i >= items.length ? "true" : undefined} class="shrink-0">
+          <TechBadge name={item} class="px-5 py-2.5 text-[15px]" />
+        </li>
+      ))
+    }
+  </ul>
+</div>

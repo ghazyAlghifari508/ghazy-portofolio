@@ -1,0 +1,34 @@
+---
+/**
+ * SectionHeading — eyebrow label + big compressed headline (DESIGN.md display type).
+ */
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  class?: string;
+}
+const { eyebrow, title, subtitle, class: className = "" } = Astro.props;
+---
+
+<header class={`mb-10 ${className}`}>
+  {
+    eyebrow && (
+      <p class="mb-3 text-[13px] font-medium uppercase tracking-[0.10em] text-[var(--text-secondary)]">
+        {eyebrow}
+      </p>
+    )
+  }
+  <h1
+    class="text-4xl font-medium leading-[1.05] tracking-[-1px] text-[var(--text-primary)] sm:text-5xl md:text-6xl"
+  >
+    {title}
+  </h1>
+  {
+    subtitle && (
+      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-[var(--text-secondary)]">
+        {subtitle}
+      </p>
+    )
+  }
+</header>
