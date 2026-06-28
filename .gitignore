@@ -24,3 +24,10 @@ pnpm-debug.log*
 .idea/
 
 .vercel
+
+# files/folders not to be pushed
+CLAUDE.md
+AGENTS.md
+DESIGN.md
+req.txt
+foto_sertifikat/
