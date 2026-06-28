@@ -71,5 +71,32 @@ const { id, title, blurb, stack, image, liveUrl } = project;
         class="transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none"
       />
     </span>
+
+    <div class="relative z-10 mt-2 flex flex-wrap gap-2">
+      {liveUrl && (
+        <a
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="event.stopPropagation()"
+          class="inline-flex min-h-10 items-center gap-1.5 rounded-[var(--radius-card)] bg-electric-lime px-3.5 text-[14px] font-medium text-near-black ring-1 ring-near-black transition-colors hover:bg-[#aef03c]"
+        >
+          Live demo
+          <Icon name="external-link" size={14} />
+        </a>
+      )}
+      {project.repoUrl && (
+        <a
+          href={project.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="event.stopPropagation()"
+          class="inline-flex min-h-10 items-center gap-1.5 rounded-[var(--radius-card)] border border-[var(--text-primary)] px-3.5 text-[14px] font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-section)]"
+        >
+          <Icon name="github" size={14} />
+          Code
+        </a>
+      )}
+    </div>
   </div>
 </article>

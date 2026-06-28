@@ -12,7 +12,7 @@
   {
     "id": "ai",
     "category": "AI & Integrations",
-    "items": ["OpenRouter", "LLM Integration", "Prompt Engineering", "AI-assisted Analytics"]
+    "items": ["AI API Integration", "LLM Integration", "Prompt Engineering", "AI-assisted Analytics"]
   },
   {
     "id": "tools",

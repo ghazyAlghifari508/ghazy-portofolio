@@ -33,6 +33,11 @@ const icon =
   match("vercel") ? `${cdn}/vercel/vercel-original.svg` :
   match("figma") ? `${cdn}/figma/figma-original.svg` :
   match("zod") ? `${cdn}/zod/zod-original.svg` :
+  match("framer") ? `https://framer.com/favicon.svg` :
+  match("better auth") ? `${cdn}/authjs/authjs-original.svg` :
+  match("inertia") ? `${cdn}/inertiajs/inertiajs-original.svg` :
+  match("shadcn") ? `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/></svg>')}` :
+  match("llm") || match("ai") ? `${cdn}/openai/openai-original.svg` :
   undefined;
 
 const fallback = name

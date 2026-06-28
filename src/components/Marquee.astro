@@ -25,7 +25,7 @@ const doubled = [...items, ...items];
     {
       doubled.map((item, i) => (
         <li aria-hidden={i >= items.length ? "true" : undefined} class="shrink-0">
-          <TechBadge name={item} class="px-5 py-2.5 text-[15px]" />
+          <TechBadge name={item} class="bg-transparent! border-none! px-5 py-2.5 text-[15px]" />
         </li>
       ))
     }

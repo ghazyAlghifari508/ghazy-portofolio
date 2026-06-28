@@ -42,6 +42,7 @@ const experience = defineCollection({
     start: z.string(), // "YYYY-MM"
     end: z.string().optional(), // omit = "Present"
     summary: z.string(),
+    image: z.string().optional(),
   }),
 });
 

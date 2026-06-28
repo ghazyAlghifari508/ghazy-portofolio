@@ -24,7 +24,7 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="generator" content={Astro.generator} />
-    <!-- set theme + js flag before paint (no FOUC) -->
+    <!-- set theme + js flag + sidebar collapse before paint (no FOUC) -->
     <script is:inline>
       (() => {
         const t = localStorage.getItem("theme");
@@ -33,6 +33,9 @@ const {
           (!t && window.matchMedia("(prefers-color-scheme: dark)").matches);
         if (dark) document.documentElement.classList.add("dark");
         document.documentElement.classList.add("js");
+        if (localStorage.getItem("sidebar") === "collapsed") {
+          document.documentElement.classList.add("sidebar-collapsed");
+        }
       })();
     </script>
   </head>
