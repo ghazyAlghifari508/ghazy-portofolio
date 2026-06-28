@@ -41,17 +41,62 @@ const socials = [
       }
     </div>
 
-    <div
+    <form
       data-reveal
       data-reveal-delay="90"
       class="space-y-4 rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] p-6 sm:p-8"
+      action={`mailto:${email}`}
+      method="post"
+      enctype="text/plain"
     >
-      <p class="text-lg text-[var(--text-primary)]">
-        Or email me directly at{' '}
-        <a href={`mailto:${email}`} class="font-medium underline underline-offset-4 decoration-electric-lime">
-          {email}
-        </a>
+      <div>
+        <label for="name" class="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
+          Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          autocomplete="name"
+          class="min-h-12 w-full rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-ground)] px-4 text-[var(--text-primary)] outline-none focus:border-near-black dark:focus:border-electric-lime"
+        />
+      </div>
+      <div>
+        <label for="email" class="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
+          Email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          class="min-h-12 w-full rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-ground)] px-4 text-[var(--text-primary)] outline-none focus:border-near-black dark:focus:border-electric-lime"
+        />
+      </div>
+      <div>
+        <label for="message" class="mb-1.5 block text-sm font-medium text-[var(--text-primary)]">
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          required
+          class="w-full rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-ground)] p-4 text-[var(--text-primary)] outline-none focus:border-near-black dark:focus:border-electric-lime"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="inline-flex min-h-12 items-center gap-2 rounded-[var(--radius-card)] bg-electric-lime px-6 font-medium text-near-black ring-1 ring-near-black transition-colors hover:bg-[#aef03c]"
+      >
+        Send Message
+        <Icon name="send" size={18} />
+      </button>
+      <p class="text-[13px] text-[var(--text-secondary)]">
+        This form currently uses a mailto fallback. Connect Formspree or a custom API when you want automatic submissions.
       </p>
-    </div>
+    </form>
   </div>
 </BaseLayout>
