@@ -2,12 +2,17 @@
   {
     "id": "frontend",
     "category": "Frontend",
-    "items": ["React 19", "Next.js (App Router)", "Astro", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Three.js", "HTML & CSS"]
+    "items": ["React 19", "Next.js (App Router)", "Astro", "Vue", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Three.js", "WebGL", "Blade", "HTML & CSS"]
   },
   {
     "id": "backend",
     "category": "Backend & Database",
-    "items": ["Laravel", "Node.js", "Prisma ORM", "Supabase", "PostgreSQL", "Better Auth", "REST API"]
+    "items": ["Laravel", "Node.js", "Python", "Golang", "Java", "Prisma ORM", "Supabase", "PostgreSQL", "MySQL", "Better Auth", "REST API"]
+  },
+  {
+    "id": "mobile",
+    "category": "Mobile",
+    "items": ["Flutter", "Dart"]
   },
   {
     "id": "ai",
@@ -17,6 +22,6 @@
   {
     "id": "tools",
     "category": "Tools & Workflow",
-    "items": ["Git & GitHub", "Vite", "Vercel", "Zod", "shadcn/ui", "Figma"]
+    "items": ["Git & GitHub", "Vite", "Vercel", "Zod", "shadcn/ui", "Figma", "n8n", "Insforge"]
   }
 ]

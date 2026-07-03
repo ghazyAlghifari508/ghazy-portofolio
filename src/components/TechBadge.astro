@@ -17,12 +17,17 @@ const match = (s: string) => key.includes(s);
 const icon =
   match("next") ? `${cdn}/nextjs/nextjs-original.svg` :
   match("react") ? `${cdn}/react/react-original.svg` :
+  match("vue") ? `${cdn}/vuejs/vuejs-original.svg` :
   match("typescript") ? `${cdn}/typescript/typescript-original.svg` :
   match("tailwind") ? `${cdn}/tailwindcss/tailwindcss-original.svg` :
   match("prisma") ? `${cdn}/prisma/prisma-original.svg` :
   match("supabase") ? `${cdn}/supabase/supabase-original.svg` :
   match("laravel") ? `${cdn}/laravel/laravel-original.svg` :
+  match("blade") ? `${cdn}/laravel/laravel-original.svg` :
   match("node") ? `${cdn}/nodejs/nodejs-original.svg` :
+  match("python") ? `${cdn}/python/python-original.svg` :
+  match("java") ? `${cdn}/java/java-original.svg` :
+  match("golang") || match("go") ? `${cdn}/go/go-original.svg` :
   match("postgres") ? `${cdn}/postgresql/postgresql-original.svg` :
   match("vite") ? `${cdn}/vitejs/vitejs-original.svg` :
   match("astro") ? `${cdn}/astro/astro-original.svg` :
@@ -30,7 +35,8 @@ const icon =
   match("mongodb") ? `${cdn}/mongodb/mongodb-original.svg` :
   match("express") ? `${cdn}/express/express-original.svg` :
   match("mysql") ? `${cdn}/mysql/mysql-original.svg` :
-  match("go") ? `${cdn}/go/go-original.svg` :
+  match("flutter") ? `${cdn}/flutter/flutter-original.svg` :
+  match("dart") ? `${cdn}/dart/dart-original.svg` :
   match("javascript") || match("js") ? `${cdn}/javascript/javascript-original.svg` :
   match("n8n") ? `https://cdn.simpleicons.org/n8n/n8n` :
   match("webgl") ? `https://cdn.simpleicons.org/webgl` :
