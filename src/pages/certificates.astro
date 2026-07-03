@@ -13,6 +13,8 @@ const fmt = (d: string) => {
   const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   return m ? `${months[+m]} ${y}` : y;
 };
+
+const isPdf = (p: string) => p.endsWith(".pdf");
 ---
 
 <BaseLayout title="Certificates — Ghazy Nabil Alghifari">
@@ -26,14 +28,25 @@ const fmt = (d: string) => {
     {
       certs.map((c, i) => (
         <article data-reveal data-reveal-delay={i * 80} class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)]">
-          <img
-            src={c.data.image}
-            alt={`Certificate: ${c.data.title}`}
-            width="600"
-            height="420"
-            loading="lazy"
-            class="aspect-[10/7] w-full object-cover"
-          />
+          {
+            isPdf(c.data.image) ? (
+              <a href={c.data.image} target="_blank" rel="noopener noreferrer" class="flex aspect-[10/7] w-full items-center justify-center bg-[var(--surface-section)] text-sm font-medium text-[var(--text-primary)] hover:underline">
+                <span class="flex flex-col items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  Open PDF
+                </span>
+              </a>
+            ) : (
+              <img
+                src={c.data.image}
+                alt={`Certificate: ${c.data.title}`}
+                width="600"
+                height="420"
+                loading="lazy"
+                class="w-full object-contain bg-(--surface-section)"
+              />
+            )
+          }
           <div class="space-y-2 p-6">
             <h2 class="font-medium text-[var(--text-primary)]">{c.data.title}</h2>
             <p class="text-sm text-[var(--text-secondary)]">{c.data.issuer}</p>

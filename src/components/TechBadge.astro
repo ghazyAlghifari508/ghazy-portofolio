@@ -27,17 +27,26 @@ const icon =
   match("vite") ? `${cdn}/vitejs/vitejs-original.svg` :
   match("astro") ? `${cdn}/astro/astro-original.svg` :
   match("three") ? `${cdn}/threejs/threejs-original.svg` :
+  match("mongodb") ? `${cdn}/mongodb/mongodb-original.svg` :
+  match("express") ? `${cdn}/express/express-original.svg` :
+  match("mysql") ? `${cdn}/mysql/mysql-original.svg` :
+  match("go") ? `${cdn}/go/go-original.svg` :
+  match("javascript") || match("js") ? `${cdn}/javascript/javascript-original.svg` :
+  match("n8n") ? `https://cdn.simpleicons.org/n8n/n8n` :
+  match("webgl") ? `https://cdn.simpleicons.org/webgl` :
+  match("opengl") ? `https://cdn.simpleicons.org/opengl` :
   match("html") ? `${cdn}/html5/html5-original.svg` :
   match("css") ? `${cdn}/css3/css3-original.svg` :
   match("git") ? `${cdn}/git/git-original.svg` :
   match("vercel") ? `${cdn}/vercel/vercel-original.svg` :
   match("figma") ? `${cdn}/figma/figma-original.svg` :
   match("zod") ? `${cdn}/zod/zod-original.svg` :
-  match("framer") ? `https://framer.com/favicon.svg` :
-  match("better auth") ? `${cdn}/authjs/authjs-original.svg` :
+  match("framer") ? `${cdn}/framermotion/framermotion-original.svg` :
+  match("better auth") ? `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>')}` :
   match("inertia") ? `${cdn}/inertiajs/inertiajs-original.svg` :
   match("shadcn") ? `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/></svg>')}` :
   match("llm") || match("ai") ? `${cdn}/openai/openai-original.svg` :
+  match("insforge") ? `https://insforge.dev/favicon.ico` :
   undefined;
 
 const fallback = name

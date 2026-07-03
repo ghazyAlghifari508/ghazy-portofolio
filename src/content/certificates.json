@@ -1,23 +1,37 @@
 [
   {
-    "id": "cert-1",
-    "title": "Certificate Name — Replace With Your Credential",
-    "issuer": "Issuing Organization",
-    "date": "2025-01",
-    "image": "/placeholders/cert-1.svg"
+    "id": "mongodb-atlas-admin",
+    "title": "MongoDB Atlas Administrator Path",
+    "issuer": "MongoDB University",
+    "date": "2026-04",
+    "image": "/certificates/MongoDB Atlas Administrator Path_Ghazy Nabil Alghifari_compressed.png"
   },
   {
-    "id": "cert-2",
-    "title": "Certificate Name — Replace With Your Credential",
-    "issuer": "Issuing Organization",
-    "date": "2024-09",
-    "image": "/placeholders/cert-2.svg"
+    "id": "mongodb-dba-self",
+    "title": "MongoDB Database Admin Path (Self-Managed)",
+    "issuer": "MongoDB University",
+    "date": "2026-04",
+    "image": "/certificates/MongoDB Database Admin Path (Self-Managed)_Ghazy Nabil Alghifari_compressed.png"
   },
   {
-    "id": "cert-3",
-    "title": "Certificate Name — Replace With Your Credential",
-    "issuer": "Issuing Organization",
-    "date": "2024-05",
-    "image": "/placeholders/cert-3.svg"
+    "id": "mongodb-data-modeling",
+    "title": "MongoDB Data Modeling Path",
+    "issuer": "MongoDB University",
+    "date": "2026-04",
+    "image": "/certificates/MongoDB Data Modeling Path_Ghazy Nabil Alghifari_compressed.png"
+  },
+  {
+    "id": "uiux-lomba-korma",
+    "title": "UI/UX Design Competition — Korma",
+    "issuer": "Korma",
+    "date": "2026-01",
+    "image": "/certificates/Sertifikat lomba uiux korma_page-0001.jpg"
+  },
+  {
+    "id": "dicoding-web-dasar",
+    "title": "Belajar Dasar Pemrograman Web",
+    "issuer": "Dicoding",
+    "date": "2026-01",
+    "image": "/certificates/dicoding_sertifikat_webdasar.png"
   }
 ]

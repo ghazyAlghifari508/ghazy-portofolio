@@ -16,12 +16,9 @@
       "Next.js 16",
       "React 19",
       "TypeScript",
-      "Tailwind v4"
-    ],
-    "tags": [
-      "AI",
-      "SaaS",
-      "Full-stack"
+      "Tailwind v4",
+      "PostgreSQL",
+      "InsForge"
     ],
     "image": "/foto/novaplanai.png",
     "liveUrl": "https://novaplanai.vercel.app",
@@ -79,6 +76,7 @@
       "React 19",
       "TypeScript",
       "Supabase",
+      "PostgreSQL",
       "Framer Motion"
     ],
     "tags": [
@@ -110,7 +108,9 @@
       "Next.js 16",
       "React 19",
       "TypeScript",
-      "Tailwind v4"
+      "Tailwind v4",
+      "Supabase",
+      "PostgreSQL"
     ],
     "tags": [
       "Full-stack",
@@ -200,9 +200,10 @@
     "year": "2025",
     "stack": [
       "React 19",
-      "Vite",
-      "TypeScript",
-      "Tailwind v4"
+      "Node.js",
+      "Express JS",
+      "MongoDB",
+      "shadcn/ui"
     ],
     "tags": [
       "Full-stack",
@@ -231,7 +232,8 @@
       "Laravel 12",
       "Inertia.js",
       "React 19",
-      "Tailwind"
+      "Tailwind",
+      "MySQL"
     ],
     "tags": [
       "Full-stack",
@@ -272,5 +274,51 @@
     "repoUrl": "https://github.com/ghazyAlghifari508/react-movie-app",
     "featured": false,
     "order": 9
+  },
+  {
+    "id": "padel-booking",
+    "title": "Padel Booking",
+    "blurb": "Padel court booking platform with real-time slot availability, coaching programs, and integrated payment.",
+    "description": "Padel Booking (CourtFlow) is a full-stack padel court booking platform featuring court discovery, real-time slot availability with anti-double-booking, coaching programs, tournament scheduling, and user reviews. Integrates Midtrans payment gateway, role-based JWT auth, and n8n automation for Telegram notifications.",
+    "features": [
+      "Court catalog with real-time slot availability and anti-double-booking",
+      "Booking flow: pick court, date, and slot with Midtrans Snap or manual payment",
+      "JWT authentication with role-based access (user / admin)",
+      "Admin dashboard for managing courts, bookings, payments, and reports",
+      "n8n automation for Telegram booking notifications"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2025",
+    "stack": ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Go", "PostgreSQL", "n8n"],
+    "tags": ["Full-stack", "Booking", "Dashboard", "n8n"],
+    "image": "/foto/padel-booking.png",
+    "repoUrl": "https://github.com/ghazyAlghifari508/padel-booking",
+    "featured": false,
+    "order": 10
+  },
+  {
+    "id": "littlecraft",
+    "title": "LittleCraft",
+    "blurb": "Browser-based voxel game inspired by Minecraft featuring infinite procedural terrain and survival gameplay.",
+    "description": "Single-file browser-based voxel game (Minecraft clone) built with Three.js. Features infinite procedural terrain with continents, caves, ores; chunk-based voxel meshing with face culling; day/night cycle; survival mode with mob AI; creative mode; inventory system; physics for walking, sprinting, jumping, swimming, flying.",
+    "features": [
+      "Infinite procedural terrain with continents, mountains, caves, and ore veins",
+      "Chunk-based voxel meshing with face culling and ambient occlusion",
+      "Day/night cycle, drifting clouds, fog, and underwater tint",
+      "First-person physics: walk, sprint, jump, swim, fly mode",
+      "Survival mode with health, mob AI, and skeletal archers",
+      "Creative mode with all blocks and flight",
+      "Inventory with 31 block types, tools, and food items",
+      "World edits persist per seed in localStorage"
+    ],
+    "role": "Game Developer",
+    "year": "2025",
+    "stack": ["JavaScript", "Three.js", "WebGL"],
+    "tags": ["Game", "3D", "WebGL"],
+    "image": "/foto/littlecraft.png",
+    "repoUrl": "https://github.com/ghazyAlghifari508/littlecraft",
+    "liveUrl": "https://littlecraft.vercel.app",
+    "featured": false,
+    "order": 11
   }
 ]
