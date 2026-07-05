@@ -22,7 +22,6 @@
     ],
     "image": "/foto/novaplanai.png",
     "liveUrl": "https://novaplanai.vercel.app",
-    "repoUrl": "https://github.com/ghazyAlghifari508/novaplan-ai",
     "featured": true,
     "order": 1
   },
@@ -54,7 +53,6 @@
     ],
     "image": "/foto/gradready.png",
     "liveUrl": "https://gradready-v1.vercel.app",
-    "repoUrl": "https://github.com/ghazyAlghifari508/gradready-apps",
     "featured": true,
     "order": 2
   },
@@ -86,7 +84,6 @@
     ],
     "image": "/foto/genting.png",
     "liveUrl": "https://genting-apps.vercel.app",
-    "repoUrl": "https://github.com/ghazyAlghifari508/genting-apps",
     "featured": true,
     "order": 3
   },
@@ -119,7 +116,6 @@
     ],
     "image": "/foto/prime-property.png",
     "liveUrl": "https://prime-property-nova.vercel.app",
-    "repoUrl": "https://github.com/ghazyAlghifari508/prime-property",
     "featured": false,
     "order": 4
   },
@@ -150,7 +146,6 @@
     ],
     "image": "/placeholders/project-hl-finance.svg",
     "liveUrl": "https://hl-finance-silk.vercel.app",
-    "repoUrl": "https://github.com/ghazyAlghifari508/hl-finance",
     "featured": false,
     "order": 5
   },
@@ -181,7 +176,6 @@
     ],
     "image": "/foto/ocleandive.png",
     "liveUrl": "https://oclean-dive-seven.vercel.app",
-    "repoUrl": "https://github.com/ghazyAlghifari508/clean-ocean",
     "featured": false,
     "order": 6
   },
@@ -292,7 +286,6 @@
     "stack": ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Go", "PostgreSQL", "n8n"],
     "tags": ["Full-stack", "Booking", "Dashboard", "n8n"],
     "image": "/foto/padel-booking.png",
-    "repoUrl": "https://github.com/ghazyAlghifari508/padel-booking",
     "featured": false,
     "order": 10
   },
@@ -316,7 +309,6 @@
     "stack": ["JavaScript", "Three.js", "WebGL"],
     "tags": ["Game", "3D", "WebGL"],
     "image": "/foto/littlecraft.png",
-    "repoUrl": "https://github.com/ghazyAlghifari508/littlecraft",
     "liveUrl": "https://littlecraft.vercel.app",
     "featured": false,
     "order": 11
