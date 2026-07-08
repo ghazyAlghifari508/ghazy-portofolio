@@ -20,7 +20,7 @@
       "PostgreSQL",
       "InsForge"
     ],
-    "image": "/foto/novaplanai.png",
+    "image": "/foto/novaplanai.webp",
     "liveUrl": "https://novaplanai.vercel.app",
     "featured": true,
     "order": 1
@@ -51,7 +51,7 @@
       "EdTech",
       "Full-stack"
     ],
-    "image": "/foto/gradready.png",
+    "image": "/foto/gradready.webp",
     "liveUrl": "https://gradready-v1.vercel.app",
     "featured": true,
     "order": 2
@@ -82,7 +82,7 @@
       "HealthTech",
       "Gamification"
     ],
-    "image": "/foto/genting.png",
+    "image": "/foto/genting.webp",
     "liveUrl": "https://genting-apps.vercel.app",
     "featured": true,
     "order": 3
@@ -114,7 +114,7 @@
       "Dashboard",
       "RBAC"
     ],
-    "image": "/foto/prime-property.png",
+    "image": "/foto/prime-property.webp",
     "liveUrl": "https://prime-property-nova.vercel.app",
     "featured": false,
     "order": 4
@@ -174,7 +174,7 @@
       "Education",
       "Frontend"
     ],
-    "image": "/foto/ocleandive.png",
+    "image": "/foto/ocleandive.webp",
     "liveUrl": "https://oclean-dive-seven.vercel.app",
     "featured": false,
     "order": 6
@@ -234,7 +234,7 @@
       "GovTech",
       "RBAC"
     ],
-    "image": "/foto/annpundung.png",
+    "image": "/foto/annpundung.webp",
     "liveUrl": "https://annpundung.sisteminformasikotacerdas.id",
     "repoUrl": "https://github.com/Fadli-Sgrd/Anpundung-Laravel",
     "featured": false,
@@ -263,7 +263,7 @@
       "API",
       "SPA"
     ],
-    "image": "/foto/react-movie.png",
+    "image": "/foto/react-movie.webp",
     "liveUrl": "https://react-movie-app-beta-orcin.vercel.app",
     "repoUrl": "https://github.com/ghazyAlghifari508/react-movie-app",
     "featured": false,
@@ -285,7 +285,7 @@
     "year": "2025",
     "stack": ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Go", "PostgreSQL", "n8n"],
     "tags": ["Full-stack", "Booking", "Dashboard", "n8n"],
-    "image": "/foto/padel-booking.png",
+    "image": "/foto/padel-booking.webp",
     "featured": false,
     "order": 10
   },
@@ -308,7 +308,7 @@
     "year": "2025",
     "stack": ["JavaScript", "Three.js", "WebGL"],
     "tags": ["Game", "3D", "WebGL"],
-    "image": "/foto/littlecraft.png",
+    "image": "/foto/littlecraft.webp",
     "liveUrl": "https://littlecraft.vercel.app",
     "featured": false,
     "order": 11

@@ -6,7 +6,7 @@
     "start": "2025-02",
     "end": "2025-03",
     "summary": "Developed a comprehensive ES6+ JavaScript module including async/await, destructuring, modules, and modern syntax for beginner-to-intermediate learners.",
-    "image": "/foto_experience/moduljses6_februari tgl 2.png"
+    "image": "/foto_experience/moduljses6_februari tgl 2.webp"
   },
   {
     "id": "exp-modules-react",
@@ -15,7 +15,7 @@
     "start": "2026-02",
     "end": "2026-03",
     "summary": "Authored and delivered a structured React.js module covering component architecture, hooks, state management, and routing for workshop participants.",
-    "image": "/foto_experience/modulreactjs_februari tgl 3.png"
+    "image": "/foto_experience/modulreactjs_februari tgl 3.webp"
   },
   {
     "id": "exp-uiux",
@@ -24,7 +24,7 @@
     "start": "2026-01-13",
     "end": "2026-03-01",
     "summary": "Designed 'StayHalal', a Sharia-compliant e-wallet app concept, as a finalist in the KORMA 13 UI/UX design competition. Focused on Islamic finance usability and clean visual hierarchy.",
-    "image": "/foto_experience/stayhalal-uiux.jpg"
+    "image": "/foto_experience/stayhalal-uiux.webp"
   },
   {
     "id": "exp-ta-oop",
@@ -33,7 +33,7 @@
     "start": "2026-03-11",
     "end": "2026-06-10",
     "summary": "Assisted in OOP lab sessions using Java (NetBeans). Guided students through encapsulation, inheritance, polymorphism, and basic design patterns.",
-    "image": "/foto_experience/asisten_praktikum_ mata kuliah pemrograman berbasis objek menggunakan bahasa java dengan tools netbeans11maret-10juni2026.jpeg"
+    "image": "/foto_experience/asisten_praktikum_ mata kuliah pemrograman berbasis objek menggunakan bahasa java dengan tools netbeans11maret-10juni2026.webp"
   },
   {
     "id": "exp-hackathon",
@@ -42,7 +42,7 @@
     "start": "2026-04-05",
     "end": "2026-05-22",
     "summary": "Built SIGMA (Sistem Informasi Geografis Makan Bergizi Gratis), a geographic information system for free nutritious meal distribution, as a team finalist in a competitive university hackathon.",
-    "image": "/foto_experience/finalis hackathon innovate codeup! membuat aplikasi SIGMA (Sistem Informasi Geografis Makan Bergizi Gratis atau MBG).JPG"
+    "image": "/foto_experience/finalis hackathon innovate codeup! membuat aplikasi SIGMA (Sistem Informasi Geografis Makan Bergizi Gratis atau MBG).webp"
   },
   {
     "id": "exp-expo",
@@ -51,7 +51,7 @@
     "start": "2026-04-11",
     "end": "2026-04-11",
     "summary": "Represented the Smart City Information Systems department at the faculty expo, presenting academic projects and engaging with visitors on campus technology initiatives.",
-    "image": "/foto_experience/expo fakultas ilmu terapan jurusan sistem informasi kota cerdas. 11 april 2026.jpeg"
+    "image": "/foto_experience/expo fakultas ilmu terapan jurusan sistem informasi kota cerdas. 11 april 2026.webp"
   },
   {
     "id": "exp-primeprop",
@@ -60,6 +60,6 @@
     "start": "2026-05-26",
     "end": "2026-06-15",
     "summary": "Developed a luxury real-estate platform with a public editorial site and an internal agent portal featuring role-based access, soft delete, audit logging, and full CRUD management.",
-    "image": "/foto_experience/primeproperty 26 mei - 15 juni 2026.png"
+    "image": "/foto_experience/primeproperty 26 mei - 15 juni 2026.webp"
   }
 ]

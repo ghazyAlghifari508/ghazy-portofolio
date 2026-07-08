@@ -18,6 +18,23 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Preconnect for critical 3rd-party origins (PageSpeed optimization) -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <!-- Non-blocking font CSS (avoids render-blocking @import from CSS) -->
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap"
+      />
+    </noscript>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
