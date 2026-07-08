@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ghazynabilalghifari.vercel.app/sitemap-index.xml

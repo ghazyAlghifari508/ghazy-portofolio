@@ -5,11 +5,52 @@ import Sidebar from "../components/Sidebar.astro";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
+
+const siteName = "Ghazy Nabil Alghifari";
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const {
-  title = "Ghazy Nabil Alghifari — Portfolio",
-  description = "Full-stack web developer portfolio showcasing projects, certificates, skills, and selected experience. Built with Astro, Tailwind CSS, and TypeScript.",
+  title = "Ghazy Nabil Alghifari — Full-Stack Web Developer",
+  description = "Portfolio of Ghazy Nabil Alghifari, a Bandung-based full-stack web developer building AI, SaaS, dashboard, and modern web applications.",
+  image = "/foto_profile.webp",
+  structuredData = [],
 } = Astro.props;
+const imageUrl = new URL(image, Astro.site);
+const profileImageUrl = new URL("/foto_profile.webp", Astro.site);
+const baseSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteName,
+    url: new URL("/", Astro.site).href,
+    image: profileImageUrl.href,
+    jobTitle: "Full-Stack Web Developer",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bandung",
+      addressCountry: "ID",
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Telkom University",
+    },
+    sameAs: [
+      "https://github.com/ghazyAlghifari508",
+      "https://www.linkedin.com/in/ghazy-alghifari-b81598386/",
+      "https://www.instagram.com/el_gh1farry/",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    url: new URL("/", Astro.site).href,
+    inLanguage: "en",
+  },
+];
+const schema = [...baseSchema, ...(Array.isArray(structuredData) ? structuredData : [structuredData])];
 ---
 
 <!doctype html>
@@ -37,10 +78,20 @@ const {
     </noscript>
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={imageUrl.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl.href} />
     <meta name="generator" content={Astro.generator} />
+    {schema.map((item) => <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />)}
     <!-- set theme + js flag + sidebar collapse before paint (no FOUC) -->
     <script is:inline>
       (() => {

@@ -23,9 +23,28 @@ const {
   liveUrl,
   repoUrl,
 } = data;
+const projectUrl = new URL(Astro.url.pathname, Astro.site).href;
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: title,
+  description,
+  url: projectUrl,
+  image: new URL(image, Astro.site).href,
+  creator: {
+    "@type": "Person",
+    name: "Ghazy Nabil Alghifari",
+  },
+  keywords: [...tags, ...stack].join(", "),
+};
 ---
 
-<BaseLayout title={`${title} — Ghazy Nabil Alghifari`} description={description}>
+<BaseLayout
+  title={`${title} — Ghazy Nabil Alghifari Project`}
+  description={description}
+  image={image}
+  structuredData={projectSchema}
+>
   <a
     href="/projects"
     class="mb-8 inline-flex items-center gap-2 text-[15px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"

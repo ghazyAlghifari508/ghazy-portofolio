@@ -9,7 +9,10 @@ const groups = await getCollection("skills");
 const techStack = [...new Set(groups.flatMap((g) => g.data.items))];
 ---
 
-<BaseLayout title="Skills — Ghazy Nabil Alghifari">
+<BaseLayout
+  title="Skills — Ghazy Nabil Alghifari"
+  description="Technical skills used by Ghazy Nabil Alghifari across frontend, backend, databases, AI integrations, and modern full-stack web development."
+>
   <SectionHeading
     eyebrow="Technical stack"
     title="Skills & Tools"
