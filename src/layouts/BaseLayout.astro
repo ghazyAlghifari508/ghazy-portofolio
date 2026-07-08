@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Sidebar from "../components/Sidebar.astro";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string;
@@ -92,6 +93,7 @@ const schema = [...baseSchema, ...(Array.isArray(structuredData) ? structuredDat
     <meta name="twitter:image" content={imageUrl.href} />
     <meta name="generator" content={Astro.generator} />
     {schema.map((item) => <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />)}
+    <Analytics />
     <!-- set theme + js flag + sidebar collapse before paint (no FOUC) -->
     <script is:inline>
       (() => {
