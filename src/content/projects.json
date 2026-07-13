@@ -312,5 +312,39 @@
     "liveUrl": "https://littlecraft.vercel.app",
     "featured": false,
     "order": 11
+  },
+  {
+    "id": "docrivo",
+    "title": "Docrivo",
+    "blurb": "A style reference generator that extracts design tokens from any website URL and generates structured DESIGN.md documents for AI coding assistants.",
+    "description": "Docrivo turns a reference website URL into a structured DESIGN.md document that AI coding assistants can use to replicate a specific visual style. It scrapes the target site with headless Chromium, extracts design tokens (colors, typography, spacing, components, layout), then generates a professional design-system document via NVIDIA NIM LLMs. Built for vibecoders using Claude Code, Cursor, v0, Lovable, and Bolt.",
+    "features": [
+      "AI-powered style reference generator — paste a URL, get a DESIGN.md matching that site's visual identity",
+      "Extracts 200+ design tokens: colors, typography, spacing, radii, shadows, CSS variables, layout patterns",
+      "LLM-generated DESIGN.md via NVIDIA NIM (Mistral Small 4 119B / Llama 3.1 70B) with self-healing validation",
+      "HTML scraper with sandboxed iframe preview, inlined CSS, and downloadable index.html",
+      "Indonesian-first UI with Midtrans Snap payment — Free (3), Starter (Rp49K — 10), Pro (Rp149K — unlimited)",
+      "Standalone Playwright worker on Fly.io crawls and generates asynchronously"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2026",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind v4",
+      "Playwright",
+      "InsForge",
+      "NVIDIA NIM",
+      "Midtrans"
+    ],
+    "tags": [
+      "AI",
+      "Full-stack",
+      "Web App"
+    ],
+    "image": "/foto/docrivo.webp",
+    "featured": false,
+    "order": 12
   }
 ]
