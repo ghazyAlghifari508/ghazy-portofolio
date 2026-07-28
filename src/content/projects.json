@@ -120,36 +120,6 @@
     "order": 4
   },
   {
-    "id": "hl-finance",
-    "title": "HL Finance",
-    "blurb": "An internal sales and receivables system for tracking transactions, debts, bonuses, and reporting on a cash basis.",
-    "description": "HL Finance is an internal management application for handling a business's customers, products, transactions, receivables, bonuses, and reports. It follows cash-basis accounting, recognizing revenue, profit, and bonus eligibility only once a transaction is fully settled, and supports PDF export for clean recaps.",
-    "features": [
-      "Customer, product, and transaction (invoice) management in one place",
-      "Receivables and bonus tracking with cash-basis recognition on settlement",
-      "Reporting and recaps with PDF export via @react-pdf/renderer",
-      "Zod-validated forms and Supabase-backed authentication"
-    ],
-    "role": "Full-Stack Developer",
-    "year": "2025",
-    "stack": [
-      "Next.js 15",
-      "TypeScript",
-      "Supabase",
-      "Prisma",
-      "shadcn/ui"
-    ],
-    "tags": [
-      "FinTech",
-      "Dashboard",
-      "Full-stack"
-    ],
-    "image": "/placeholders/project-hl-finance.svg",
-    "liveUrl": "https://hl-finance-silk.vercel.app",
-    "featured": false,
-    "order": 5
-  },
-  {
     "id": "ocean-guard",
     "title": "OClean Dive",
     "blurb": "An immersive 3D web experience that builds empathy and awareness around ocean plastic pollution.",
@@ -178,36 +148,6 @@
     "liveUrl": "https://oclean-dive-seven.vercel.app",
     "featured": false,
     "order": 6
-  },
-  {
-    "id": "sobatbatik",
-    "title": "SobatBatik",
-    "blurb": "A web platform for exploring and learning about Indonesian batik, with a decoupled frontend and backend.",
-    "description": "SobatBatik is a web platform dedicated to exploring and preserving Indonesian batik culture. It pairs a modern, responsive frontend with a separate backend service to deliver information and discovery features around batik motifs and heritage.",
-    "features": [
-      "Modern, responsive frontend for browsing batik content",
-      "Decoupled architecture with a dedicated backend service",
-      "Type-safe React + TypeScript codebase",
-      "Cultural-heritage focused information and discovery"
-    ],
-    "role": "Full-Stack Developer",
-    "year": "2025",
-    "stack": [
-      "React 19",
-      "Node.js",
-      "Express JS",
-      "MongoDB",
-      "shadcn/ui"
-    ],
-    "tags": [
-      "Full-stack",
-      "Culture",
-      "Web App"
-    ],
-    "image": "/placeholders/project-sobatbatik.svg",
-    "repoUrl": "https://github.com/ghazyAlghifari508/SobatBatik",
-    "featured": false,
-    "order": 7
   },
   {
     "id": "anpundung",
