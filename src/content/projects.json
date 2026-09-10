@@ -95,6 +95,39 @@
     "order": 3
   },
   {
+    "id": "zona-ai",
+    "title": "Zona.ai",
+    "blurb": "Multi-model AI reasoning and evaluation workspace with side-by-side model comparison, unified external retrieval, and artifact collaboration.",
+    "description": "Zona.ai is a high-performance multi-model AI evaluation and reasoning workspace. Instead of locking workflows into a single model, Zona.ai empowers developers, researchers, and creators to query frontier LLMs simultaneously under identical deterministic conditions, evaluate outputs with synchronized side-by-side diffing, and collaborate on dynamic living artifacts.",
+    "features": [
+      "Simultaneous multi-model comparison across 2 to 4 frontier LLMs side-by-side with synchronized scrolling",
+      "Unified external context and grounded retrieval with shared web search and document RAG",
+      "Single multiplexed Server-Sent Events (SSE) streaming architecture across concurrent models",
+      "Interactive artifact canvas supporting code blocks, Markdown, and Mermaid diagrams",
+      "Granular token credit management, session security, and multi-model preference controls"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2026",
+    "stack": [
+      "TanStack Start",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Bun",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Better Auth"
+    ],
+    "tags": [
+      "AI",
+      "SaaS",
+      "Full-stack"
+    ],
+    "image": "/foto/zona-ai.webp",
+    "featured": false,
+    "order": 4
+  },
+  {
     "id": "prime-property",
     "title": "Prime Property",
     "blurb": "A two-tier real-estate platform pairing a luxury public site with a role-based internal agent portal.",
@@ -124,7 +157,7 @@
     "image": "/foto/prime-property.webp",
     "liveUrl": "https://prime-property-nova.vercel.app",
     "featured": false,
-    "order": 4
+    "order": 5
   },
   {
     "id": "ocean-guard",
@@ -168,7 +201,7 @@
       "Server-driven SPA experience powered by Laravel and Inertia.js"
     ],
     "role": "Full-Stack Developer (Team Project)",
-    "year": "2024",
+    "year": "2025",
     "stack": [
       "Laravel 12",
       "Inertia.js",
@@ -199,7 +232,7 @@
       "Dark and light theme switching, fully responsive across devices"
     ],
     "role": "Frontend Developer",
-    "year": "2024",
+    "year": "2025",
     "stack": [
       "React 19",
       "Vite",
@@ -246,6 +279,7 @@
       "n8n"
     ],
     "image": "/foto/padel-booking.webp",
+    "repoUrl": "https://github.com/ghazyAlghifari508/padel-booking",
     "featured": false,
     "order": 10
   },
