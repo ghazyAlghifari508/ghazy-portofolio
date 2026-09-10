@@ -1,5 +1,55 @@
 [
   {
+    "id": "google-ai",
+    "title": "Google AI Professional Certificate",
+    "issuer": "Google",
+    "date": "2026-08",
+    "image": "/certificates/google-ai-professional-cert.webp",
+    "pdf": "/certificates/google-ai-professional-cert.pdf",
+    "url": "https://coursera.org/verify/professional-cert/FUG2EQ0YZ2A9"
+  },
+  {
+    "id": "google-it-automation-python",
+    "title": "Google IT Automation with Python Professional Certificate",
+    "issuer": "Google",
+    "date": "2026-08",
+    "image": "/certificates/google-it-automation-python.webp",
+    "pdf": "/certificates/google-it-automation-python.pdf",
+    "url": "https://coursera.org/verify/professional-cert/7WW1KY332I78"
+  },
+  {
+    "id": "google-agile-essentials",
+    "title": "Google Agile Essentials Specialization",
+    "issuer": "Google",
+    "date": "2026-08",
+    "image": "/certificates/google-agile-essentials.webp",
+    "pdf": "/certificates/google-agile-essentials.pdf",
+    "url": "https://coursera.org/verify/specialization/Y4GDOK8VVKRX"
+  },
+  {
+    "id": "ai-agent-programming-hacktiv8",
+    "title": "IT - AI Agent for Programming",
+    "issuer": "IBM SkillsBuild x Hacktiv8",
+    "date": "2026-07",
+    "image": "/certificates/ai-agent-programming-hacktiv8.webp",
+    "pdf": "/certificates/ai-agent-programming-hacktiv8.pdf"
+  },
+  {
+    "id": "belajar-laravel-wpu",
+    "title": "Belajar Laravel",
+    "issuer": "WPU Course",
+    "date": "2026-07",
+    "image": "/certificates/belajar-laravel-wpu.webp"
+  },
+  {
+    "id": "hackathon-innovate-codeup",
+    "title": "Finalis Hackathon IN:NOVATE CodeUp!",
+    "issuer": "Politeknik Astra",
+    "date": "2026-05",
+    "image": "/certificates/hackathon-innovate-codeup.webp",
+    "pdf": "/certificates/hackathon-innovate-codeup.pdf"
+  },
+  {
     "id": "mongodb-atlas-admin",
     "title": "MongoDB Atlas Administrator Path",
     "issuer": "MongoDB University",
@@ -25,7 +75,8 @@
     "title": "UI/UX Design Competition (KORMA)",
     "issuer": "Korma",
     "date": "2026-01",
-    "image": "/certificates/Sertifikat lomba uiux korma_page-0001.webp"
+    "image": "/certificates/Sertifikat lomba uiux korma_page-0001.webp",
+    "pdf": "/certificates/sertifikat-lomba-uiux-korma.pdf"
   },
   {
     "id": "dicoding-web-dasar",

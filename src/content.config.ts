@@ -29,6 +29,7 @@ const certificates = defineCollection({
     issuer: z.string(),
     date: z.string(), // "YYYY-MM" (display-only, kept as string)
     image: z.string(),
+    pdf: z.string().optional(),
     url: z.string().url().optional(),
   }),
 });

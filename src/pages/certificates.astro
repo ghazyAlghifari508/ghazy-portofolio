@@ -19,50 +19,256 @@ const isPdf = (p: string) => p.endsWith(".pdf");
 
 <BaseLayout
   title="Certificates | Ghazy Nabil Alghifari"
-  description="Selected certificates earned by Ghazy Nabil Alghifari, including MongoDB University, Dicoding web programming, and UI/UX competition credentials."
+  description="Selected certifications and credentials earned by Ghazy Nabil Alghifari, including Google AI, Google IT Automation, Hackathon finalist, and web development achievements."
 >
   <SectionHeading
     eyebrow="Credentials"
     title="Certificates"
-    subtitle="Selected certifications and learning milestones that support my technical growth in databases, web development, and product design."
+    subtitle="Selected certifications and learning milestones that support my technical growth in AI, cloud automation, web development, and software engineering."
   />
 
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {
       certs.map((c, i) => (
-        <article data-reveal data-reveal-delay={i * 80} class="overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)]">
-          {
-            isPdf(c.data.image) ? (
-              <a href={c.data.image} target="_blank" rel="noopener noreferrer" class="flex aspect-[10/7] w-full items-center justify-center bg-[var(--surface-section)] text-sm font-medium text-[var(--text-primary)] hover:underline">
-                <span class="flex flex-col items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                  Open PDF
-                </span>
-              </a>
-            ) : (
-              <img
-                src={c.data.image}
-                alt={`Certificate: ${c.data.title}`}
-                width="600"
-                height="420"
-                loading="lazy"
-                class="w-full object-contain bg-(--surface-section)"
-              />
-            )
-          }
-          <div class="space-y-2 p-6">
-            <h2 class="font-medium text-[var(--text-primary)]">{c.data.title}</h2>
-            <p class="text-sm text-[var(--text-secondary)]">{c.data.issuer}</p>
-            <p class="text-[13px] text-[var(--text-secondary)]">{fmt(c.data.date)}</p>
-            {c.data.url && (
-              <a href={c.data.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 pt-1 text-sm font-medium text-[var(--text-primary)] underline-offset-4 hover:underline">
-                View credential
-                <Icon name="external-link" size={14} />
-              </a>
+        <article
+          data-reveal
+          data-reveal-delay={i * 60}
+          class="cert-card group relative flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[var(--text-primary)] cursor-pointer"
+          data-title={c.data.title}
+          data-issuer={c.data.issuer}
+          data-date={fmt(c.data.date)}
+          data-image={c.data.image}
+          data-pdf={c.data.pdf || ""}
+          data-url={c.data.url || ""}
+          tabindex="0"
+          role="button"
+          aria-label={`Preview certificate: ${c.data.title}`}
+        >
+          <div class="relative aspect-[16/11] w-full overflow-hidden bg-[var(--surface-section)] border-b border-[var(--border-subtle)]">
+            <img
+              src={c.data.image}
+              alt={`Certificate: ${c.data.title}`}
+              width="600"
+              height="412"
+              loading="lazy"
+              class="h-full w-full object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+            />
+            {c.data.pdf && (
+              <span class="absolute top-3 left-3 inline-flex items-center gap-1 rounded-[var(--radius-badge)] bg-near-black/75 px-2 py-0.5 text-[11px] font-medium text-pure-white backdrop-blur-sm">
+                PDF
+              </span>
             )}
+            <div class="absolute inset-0 flex items-center justify-center bg-near-black/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100">
+              <span class="inline-flex items-center gap-1.5 rounded-[var(--radius-card)] bg-electric-lime px-3.5 py-1.5 text-xs font-medium text-near-black shadow-md">
+                <Icon name="eye" size={14} />
+                Preview certificate
+              </span>
+            </div>
+          </div>
+
+          <div class="flex flex-1 flex-col justify-between p-5 sm:p-6">
+            <div class="space-y-1.5">
+              <h2 class="text-lg font-medium text-[var(--text-primary)] transition-colors group-hover:text-electric-lime">
+                {c.data.title}
+              </h2>
+              <p class="text-sm text-[var(--text-secondary)]">{c.data.issuer}</p>
+              <p class="text-[13px] text-[var(--text-secondary)]">{fmt(c.data.date)}</p>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--border-subtle)] pt-3 text-sm">
+              <span class="inline-flex items-center gap-1.5 font-medium text-[var(--text-primary)]">
+                <Icon name="eye" size={15} />
+                Preview
+              </span>
+              {c.data.url && (
+                <a
+                  href={c.data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onclick="event.stopPropagation()"
+                  class="inline-flex items-center gap-1 text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] hover:underline"
+                >
+                  Verify credential
+                  <Icon name="external-link" size={13} />
+                </a>
+              )}
+            </div>
           </div>
         </article>
       ))
     }
   </div>
+
+  <!-- Interactive Certificate Preview Modal -->
+  <div
+    id="cert-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-near-black/80 p-3 backdrop-blur-sm sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div
+      id="modal-box"
+      class="relative flex h-[92vh] max-h-[920px] w-full max-w-5xl flex-col overflow-hidden rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--surface-card)] shadow-2xl"
+    >
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-[var(--border-subtle)] px-5 py-4 bg-[var(--surface-card)]">
+        <div class="min-w-0 pr-4">
+          <h3 id="modal-title" class="truncate text-lg font-medium text-[var(--text-primary)] sm:text-xl"></h3>
+          <p id="modal-meta" class="mt-0.5 text-xs text-[var(--text-secondary)] sm:text-sm"></p>
+        </div>
+        <div class="flex shrink-0 items-center gap-2">
+          <a
+            id="modal-open-tab"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-[var(--radius-badge)] border border-[var(--border-subtle)] px-3 py-1.5 text-xs font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-section)]"
+          >
+            <span>Open in new tab</span>
+            <Icon name="external-link" size={13} />
+          </a>
+          <a
+            id="modal-verify-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="items-center gap-1.5 rounded-[var(--radius-badge)] bg-electric-lime px-3 py-1.5 text-xs font-medium text-near-black ring-1 ring-near-black transition-colors hover:bg-[#aef03c]"
+            style="display: none;"
+          >
+            <span>Verify</span>
+            <Icon name="external-link" size={13} />
+          </a>
+          <button
+            id="modal-close-btn"
+            type="button"
+            aria-label="Close preview"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-subtle)] text-[var(--text-primary)] transition-colors hover:bg-[var(--surface-section)]"
+          >
+            <Icon name="x" size={18} />
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (PDF Iframe or Image) -->
+      <div class="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden bg-[var(--surface-section)] p-2 sm:p-4">
+        <iframe
+          id="modal-iframe"
+          src=""
+          class="h-full w-full rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-pure-white"
+          title="Certificate PDF Viewer"
+        ></iframe>
+        <img
+          id="modal-image"
+          src=""
+          alt=""
+          class="hidden max-h-full max-w-full rounded-[var(--radius-card)] object-contain"
+        />
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="flex items-center justify-between border-t border-[var(--border-subtle)] px-5 py-3 bg-[var(--surface-card)] text-xs text-[var(--text-secondary)]">
+        <span>Press <kbd class="rounded border border-[var(--border-subtle)] bg-[var(--surface-section)] px-1.5 py-0.5 font-mono text-[11px] text-[var(--text-primary)]">Esc</kbd> or click outside to close</span>
+        <button
+          id="modal-close-footer-btn"
+          type="button"
+          class="rounded-[var(--radius-badge)] border border-[var(--border-subtle)] px-3 py-1 text-xs font-medium text-[var(--text-primary)] hover:bg-[var(--surface-section)]"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
+
+<script>
+  const modal = document.getElementById("cert-modal");
+  const modalBox = document.getElementById("modal-box");
+  const modalTitle = document.getElementById("modal-title");
+  const modalMeta = document.getElementById("modal-meta");
+  const modalIframe = document.getElementById("modal-iframe") as HTMLIFrameElement | null;
+  const modalImage = document.getElementById("modal-image") as HTMLImageElement | null;
+  const modalOpenTab = document.getElementById("modal-open-tab") as HTMLAnchorElement | null;
+  const modalVerifyLink = document.getElementById("modal-verify-link") as HTMLAnchorElement | null;
+  const modalCloseBtn = document.getElementById("modal-close-btn");
+  const modalCloseFooterBtn = document.getElementById("modal-close-footer-btn");
+
+  let lastActiveElement: HTMLElement | null = null;
+
+  function openModal(card: HTMLElement) {
+    lastActiveElement = document.activeElement as HTMLElement | null;
+    const title = card.dataset.title || "";
+    const issuer = card.dataset.issuer || "";
+    const date = card.dataset.date || "";
+    const image = card.dataset.image || "";
+    const pdf = card.dataset.pdf || "";
+    const url = card.dataset.url || "";
+
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalMeta) modalMeta.textContent = `${issuer} • ${date}`;
+
+    const targetDoc = pdf || image;
+    if (modalOpenTab) modalOpenTab.href = targetDoc;
+
+    if (modalVerifyLink) {
+      if (url) {
+        modalVerifyLink.href = url;
+        modalVerifyLink.style.display = "inline-flex";
+      } else {
+        modalVerifyLink.style.display = "none";
+      }
+    }
+
+    if (pdf && modalIframe && modalImage) {
+      modalIframe.classList.remove("hidden");
+      modalImage.classList.add("hidden");
+      modalIframe.src = `${pdf}#toolbar=1&navpanes=0&view=FitH`;
+    } else if (modalIframe && modalImage) {
+      modalIframe.classList.add("hidden");
+      modalImage.classList.remove("hidden");
+      modalImage.src = image;
+      modalImage.alt = `Certificate: ${title}`;
+    }
+
+    if (modal) {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+    document.body.style.overflow = "hidden";
+    modalCloseBtn?.focus();
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    if (modalIframe) modalIframe.src = "";
+    if (modalImage) modalImage.src = "";
+    if (modalVerifyLink) modalVerifyLink.style.display = "none";
+    document.body.style.overflow = "";
+    lastActiveElement?.focus();
+  }
+
+  document.querySelectorAll<HTMLElement>(".cert-card").forEach((card) => {
+    card.addEventListener("click", () => openModal(card));
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(card);
+      }
+    });
+  });
+
+  modalCloseBtn?.addEventListener("click", closeModal);
+  modalCloseFooterBtn?.addEventListener("click", closeModal);
+
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+</script>
