@@ -1,7 +1,7 @@
 [
   {
     "id": "exp-modules-es6",
-    "role": "Instructor Module Author — JavaScript ES6+",
+    "role": "Instructor Module Author: JavaScript ES6+",
     "org": "Coding Workshop",
     "start": "2025-02",
     "end": "2025-03",
@@ -10,7 +10,7 @@
   },
   {
     "id": "exp-modules-react",
-    "role": "Instructor Module Author — React.js",
+    "role": "Instructor Module Author: React.js",
     "org": "Coding Workshop",
     "start": "2026-02",
     "end": "2026-03",
@@ -19,7 +19,7 @@
   },
   {
     "id": "exp-uiux",
-    "role": "Finalist — KORMA 13 UI/UX Design",
+    "role": "Finalist: KORMA 13 UI/UX Design",
     "org": "Competition",
     "start": "2026-01-13",
     "end": "2026-03-01",
@@ -28,7 +28,7 @@
   },
   {
     "id": "exp-ta-oop",
-    "role": "Teaching Assistant — Object-Oriented Programming",
+    "role": "Teaching Assistant: Object-Oriented Programming",
     "org": "Telkom University",
     "start": "2026-03-11",
     "end": "2026-06-10",
@@ -37,7 +37,7 @@
   },
   {
     "id": "exp-hackathon",
-    "role": "Finalist — Innovate CodeUp Hackathon",
+    "role": "Finalist: Innovate CodeUp Hackathon",
     "org": "Competition",
     "start": "2026-04-05",
     "end": "2026-05-22",
@@ -46,7 +46,7 @@
   },
   {
     "id": "exp-expo",
-    "role": "Exhibitor — Faculty of Applied Sciences",
+    "role": "Exhibitor: Faculty of Applied Sciences",
     "org": "Telkom University",
     "start": "2026-04-11",
     "end": "2026-04-11",
@@ -55,7 +55,7 @@
   },
   {
     "id": "exp-primeprop",
-    "role": "Full-Stack Developer — Prime Property",
+    "role": "Full-Stack Developer: Prime Property",
     "org": "Project-Based",
     "start": "2026-05-26",
     "end": "2026-06-15",

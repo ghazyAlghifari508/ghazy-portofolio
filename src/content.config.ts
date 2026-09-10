@@ -27,7 +27,7 @@ const certificates = defineCollection({
     id: z.string(),
     title: z.string(),
     issuer: z.string(),
-    date: z.string(), // "YYYY-MM" — display-only, kept as string
+    date: z.string(), // "YYYY-MM" (display-only, kept as string)
     image: z.string(),
     url: z.string().url().optional(),
   }),

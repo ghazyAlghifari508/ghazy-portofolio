@@ -19,7 +19,7 @@ const fmt = (d?: string) => {
 ---
 
 <BaseLayout
-  title="Experience — Ghazy Nabil Alghifari"
+  title="Experience | Ghazy Nabil Alghifari"
   description="Experience timeline for Ghazy Nabil Alghifari, including teaching assistant work, coding workshops, hackathons, competitions, and full-stack projects."
 >
   <SectionHeading
@@ -55,7 +55,7 @@ const fmt = (d?: string) => {
 
           <div class="flex flex-col justify-center">
             <p class="mb-2 text-[13px] font-medium uppercase tracking-[0.08em] text-[var(--text-secondary)]">
-              {it.data.start === it.data.end ? fmt(it.data.start) : `${fmt(it.data.start)} — ${fmt(it.data.end)}`}
+              {it.data.start === it.data.end ? fmt(it.data.start) : `${fmt(it.data.start)} - ${fmt(it.data.end)}`}
             </p>
             <h2 class="text-2xl font-medium text-[var(--text-primary)]">
               {it.data.role}

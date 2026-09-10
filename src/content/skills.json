@@ -2,12 +2,12 @@
   {
     "id": "frontend",
     "category": "Frontend",
-    "items": ["React 19", "Next.js (App Router)", "Astro", "Vue", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Three.js", "WebGL", "Blade", "HTML & CSS"]
+    "items": ["React 19", "Next.js (App Router)", "TanStack Start", "Astro", "Vue", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Three.js", "WebGL", "Blade", "HTML & CSS"]
   },
   {
     "id": "backend",
     "category": "Backend & Database",
-    "items": ["Laravel", "Node.js", "Python", "Golang", "Java", "Prisma ORM", "Supabase", "PostgreSQL", "MySQL", "Insforge", "Better Auth", "REST API"]
+    "items": ["Laravel", "Node.js", "Python", "Golang", "Java", "Drizzle ORM", "Prisma ORM", "Supabase", "PostgreSQL", "MySQL", "Insforge", "Better Auth", "REST API"]
   },
   {
     "id": "mobile",

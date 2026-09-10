@@ -1,27 +1,33 @@
 [
   {
-    "id": "novaplan-ai",
-    "title": "NovaPlan AI",
-    "blurb": "An AI-powered SaaS workspace that turns rough ideas into industry-standard Product Requirements Documents in minutes.",
-    "description": "NovaPlan AI is a modern SaaS workspace built to help product managers, developers, and founders draft industry-standard Product Requirements Documents in minutes instead of days. It pairs a conversational AI engine with a full Markdown editor and version control, so teams can move from a vague idea to a structured spec without leaving the browser.",
+    "id": "prdfy",
+    "title": "PrdFy",
+    "blurb": "AI-powered product development workspace that turns ideas into structured PRDs, acceptance criteria, and executable task kanban boards.",
+    "description": "PrdFy is an AI-powered product development workspace designed to eliminate the blank page problem for founders and product teams. Through a guided question flow, PrdFy translates product ideas into industry-standard Product Requirements Documents (PRD), per-feature Acceptance Criteria (AC), and sprint-ready Kanban task boards with full version history.",
     "features": [
-      "Conversational AI engine for brainstorming and generating technical and business specs",
-      "Markdown PRD editor with live preview, syntax highlighting, and Mermaid diagram rendering",
-      "Built-in version history with automatic versioning, rollback, and diff tracking",
-      "Project workspaces with folders, search, and filtering to keep documents organized"
+      "Guided multi-stage product planning pipeline: Question Flow, PRD, Acceptance Criteria (AC), and Kanban Tasks",
+      "Interactive PRD generator with version history, revision diffing, and Markdown / Mermaid diagram rendering",
+      "Automated Acceptance Criteria generation with technical implementation-options picker",
+      "Dynamic Kanban task board with complexity-scaled task breakdowns and sprint planning",
+      "Multi-provider AI generation with credit/token management and secure authentication"
     ],
     "role": "Full-Stack Developer",
-    "year": "2025",
+    "year": "2026",
     "stack": [
-      "Next.js 16",
+      "TanStack Start",
       "React 19",
       "TypeScript",
-      "Tailwind v4",
+      "Tailwind CSS v4",
       "PostgreSQL",
-      "InsForge"
+      "Drizzle ORM",
+      "Better Auth"
     ],
-    "image": "/foto/novaplanai.webp",
-    "liveUrl": "https://novaplanai.vercel.app",
+    "tags": [
+      "AI",
+      "SaaS",
+      "Full-stack"
+    ],
+    "image": "/foto/prdfy.webp",
     "featured": true,
     "order": 1
   },
@@ -38,7 +44,7 @@
       "Role-based admin panel for managing job resources, scoring parameters, and analytics"
     ],
     "role": "Full-Stack Developer",
-    "year": "2025",
+    "year": "2026",
     "stack": [
       "Next.js 15",
       "TypeScript",
@@ -68,7 +74,7 @@
       "Growth tracking aligned with the 1,000-days-of-life framework"
     ],
     "role": "Full-Stack Developer",
-    "year": "2025",
+    "year": "2026",
     "stack": [
       "Next.js 16",
       "React 19",
@@ -84,6 +90,7 @@
     ],
     "image": "/foto/genting.webp",
     "liveUrl": "https://genting-apps.vercel.app",
+    "repoUrl": "https://github.com/ghazyAlghifari508/genting-apps",
     "featured": true,
     "order": 3
   },
@@ -100,7 +107,7 @@
       "Soft delete and audit logging for every property change"
     ],
     "role": "Full-Stack Developer",
-    "year": "2025",
+    "year": "2026",
     "stack": [
       "Next.js 16",
       "React 19",
@@ -131,7 +138,7 @@
       "Conservation-focused storytelling on sustainable technology themes"
     ],
     "role": "Frontend Developer (Team Project)",
-    "year": "2024",
+    "year": "2026",
     "stack": [
       "React 19",
       "Vite",
@@ -222,9 +229,22 @@
       "n8n automation for Telegram booking notifications"
     ],
     "role": "Full-Stack Developer",
-    "year": "2025",
-    "stack": ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Go", "PostgreSQL", "n8n"],
-    "tags": ["Full-stack", "Booking", "Dashboard", "n8n"],
+    "year": "2026",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind v4",
+      "Go",
+      "PostgreSQL",
+      "n8n"
+    ],
+    "tags": [
+      "Full-stack",
+      "Booking",
+      "Dashboard",
+      "n8n"
+    ],
     "image": "/foto/padel-booking.webp",
     "featured": false,
     "order": 10
@@ -245,9 +265,17 @@
       "World edits persist per seed in localStorage"
     ],
     "role": "Game Developer",
-    "year": "2025",
-    "stack": ["JavaScript", "Three.js", "WebGL"],
-    "tags": ["Game", "3D", "WebGL"],
+    "year": "2026",
+    "stack": [
+      "JavaScript",
+      "Three.js",
+      "WebGL"
+    ],
+    "tags": [
+      "Game",
+      "3D",
+      "WebGL"
+    ],
     "image": "/foto/littlecraft.webp",
     "liveUrl": "https://littlecraft.vercel.app",
     "featured": false,
@@ -259,11 +287,11 @@
     "blurb": "A style reference generator that extracts design tokens from any website URL and generates structured DESIGN.md documents for AI coding assistants.",
     "description": "Docrivo turns a reference website URL into a structured DESIGN.md document that AI coding assistants can use to replicate a specific visual style. It scrapes the target site with headless Chromium, extracts design tokens (colors, typography, spacing, components, layout), then generates a professional design-system document via NVIDIA NIM LLMs. Built for vibecoders using Claude Code, Cursor, v0, Lovable, and Bolt.",
     "features": [
-      "AI-powered style reference generator — paste a URL, get a DESIGN.md matching that site's visual identity",
+      "AI-powered style reference generator: paste a URL to get a DESIGN.md matching that site's visual identity",
       "Extracts 200+ design tokens: colors, typography, spacing, radii, shadows, CSS variables, layout patterns",
       "LLM-generated DESIGN.md via NVIDIA NIM (Mistral Small 4 119B / Llama 3.1 70B) with self-healing validation",
       "HTML scraper with sandboxed iframe preview, inlined CSS, and downloadable index.html",
-      "Indonesian-first UI with Midtrans Snap payment — Free (3), Starter (Rp49K — 10), Pro (Rp149K — unlimited)",
+      "Indonesian-first UI with Midtrans Snap payment: Free (3), Starter (Rp49K for 10), and Pro (Rp149K for unlimited)",
       "Standalone Playwright worker on Fly.io crawls and generates asynchronously"
     ],
     "role": "Full-Stack Developer",

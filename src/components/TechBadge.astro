@@ -1,6 +1,6 @@
 ---
 /**
- * TechBadge — small stack chip with icon. Uses Devicon CDN when available,
+ * TechBadge: small stack chip with icon. Uses Devicon CDN when available,
  * falls back to a compact text mark for niche tools.
  * ponytail: no icon dependency; add mappings only for tech actually shown.
  */
@@ -48,11 +48,13 @@ const icon =
   match("figma") ? `${cdn}/figma/figma-original.svg` :
   match("zod") ? `${cdn}/zod/zod-original.svg` :
   match("framer") ? `${cdn}/framermotion/framermotion-original.svg` :
-  match("better auth") ? `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>')}` :
+  match("better auth") ? `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#000000"><path d="M0 3.39v17.22h5.783V15.06h6.434V8.939H5.783V3.39ZM12.217 8.94h5.638v6.122h-5.638v5.548H24V3.391H12.217Z"/></svg>')}` :
   match("inertia") ? `${cdn}/inertiajs/inertiajs-original.svg` :
   match("shadcn") ? `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/><line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"/></svg>')}` :
   match("llm") || match("ai") ? `${cdn}/openai/openai-original.svg` :
   match("insforge") ? `https://insforge.dev/favicon.ico` :
+  match("tanstack") ? `https://cdn.simpleicons.org/tanstack` :
+  match("drizzle") ? `https://cdn.simpleicons.org/drizzle` :
   match("playwright") ? `${cdn}/playwright/playwright-original.svg` :
   match("nvidia") ? `https://cdn.simpleicons.org/nvidia` :
   match("midtrans") ? `https://cdn.simpleicons.org/midtrans` :
@@ -60,6 +62,8 @@ const icon =
   match("codex") ? `https://cdn.simpleicons.org/openai` :
   match("obsidian") ? `https://cdn.simpleicons.org/obsidian` :
   undefined;
+
+const isDarkInvert = match("better auth") || match("tanstack") || match("shadcn");
 
 const fallback = name
   .replace(/\([^)]*\)/g, "")
@@ -75,7 +79,7 @@ const fallback = name
 >
   {
     icon ? (
-      <img src={icon} alt="" width="14" height="14" loading="lazy" class="h-3.5 w-3.5" />
+      <img src={icon} alt="" width="14" height="14" loading="lazy" class={`h-3.5 w-3.5 ${isDarkInvert ? "dark:invert" : ""}`} />
     ) : (
       <span class="inline-flex h-3.5 min-w-3.5 items-center justify-center rounded-[4px] bg-electric-lime px-[3px] text-[9px] font-bold text-near-black">
         {fallback}
