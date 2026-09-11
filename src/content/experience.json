@@ -52,14 +52,5 @@
     "end": "2026-04-11",
     "summary": "Represented the Smart City Information Systems department at the faculty expo, presenting academic projects and engaging with visitors on campus technology initiatives.",
     "image": "/foto_experience/expo fakultas ilmu terapan jurusan sistem informasi kota cerdas. 11 april 2026.webp"
-  },
-  {
-    "id": "exp-primeprop",
-    "role": "Full-Stack Developer: Prime Property",
-    "org": "Project-Based",
-    "start": "2026-05-26",
-    "end": "2026-06-15",
-    "summary": "Developed a luxury real-estate platform with a public editorial site and an internal agent portal featuring role-based access, soft delete, audit logging, and full CRUD management.",
-    "image": "/foto_experience/primeproperty 26 mei - 15 juni 2026.webp"
   }
 ]
