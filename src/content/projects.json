@@ -348,5 +348,39 @@
     "image": "/foto/docrivo.webp",
     "featured": false,
     "order": 12
+  },
+  {
+    "id": "sigma",
+    "title": "SIGMA",
+    "blurb": "AI-powered geospatial platform for optimizing Free Nutritious Meal (MBG) kitchen distribution and school supply monitoring.",
+    "description": "SIGMA is an AI-powered geospatial platform built to optimize the placement of Free Nutritious Meal (MBG) kitchens and streamline student food distribution across Indonesia. It combines K-Means clustering, Haversine geospatial calculations, and multi-role dashboards to ensure efficient operational coverage and rapid complaint resolution.",
+    "features": [
+      "Processed and visualized over 200,000 school data points on interactive Leaflet maps with province-based clustering",
+      "Integrated K-Means clustering and Haversine distance calculations to recommend optimal kitchen locations",
+      "Designed 3 role-based dashboards for Government, Kitchen Operators, and Students with complaint tracking",
+      "AI-powered complaint verification and sentiment analysis for school food quality and distribution issues",
+      "Relational PostgreSQL database schema designed for geospatial data, operational workflows, and analytics"
+    ],
+    "role": "Full-Stack Developer",
+    "year": "2026",
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "PostgreSQL",
+      "Prisma",
+      "Leaflet",
+      "Recharts"
+    ],
+    "tags": [
+      "AI",
+      "GovTech",
+      "Full-stack"
+    ],
+    "image": "/foto/sigma.webp",
+    "repoUrl": "https://github.com/ghazyAlghifari508/sigma",
+    "featured": false,
+    "order": 13
   }
 ]
