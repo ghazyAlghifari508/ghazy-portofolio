@@ -156,6 +156,7 @@
     ],
     "image": "/foto/prime-property.webp",
     "liveUrl": "https://prime-property-nova.vercel.app",
+    "repoUrl": "https://github.com/ghazyAlghifari508/prime-property",
     "featured": false,
     "order": 5
   },
