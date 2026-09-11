@@ -2,12 +2,12 @@
   {
     "id": "frontend",
     "category": "Frontend",
-    "items": ["React 19", "Next.js (App Router)", "TanStack Start", "Astro", "Vue", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Three.js", "WebGL", "Blade", "HTML & CSS"]
+    "items": ["React 19", "Next.js (App Router)", "TanStack Start", "Astro", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Three.js", "WebGL", "Blade", "HTML & CSS"]
   },
   {
     "id": "backend",
     "category": "Backend & Database",
-    "items": ["Laravel", "Node.js", "Python", "Golang", "Java", "Drizzle ORM", "Prisma ORM", "Supabase", "PostgreSQL", "MySQL", "Insforge", "Better Auth", "REST API"]
+    "items": ["PHP", "Laravel", "Node.js", "Golang", "Java", "Drizzle ORM", "Prisma ORM", "Supabase", "PostgreSQL", "MySQL", "Better Auth"]
   },
   {
     "id": "mobile",
@@ -15,13 +15,8 @@
     "items": ["Flutter", "Dart"]
   },
   {
-    "id": "ai",
-    "category": "AI & Integrations",
-    "items": ["AI API Integration", "LLM Integration", "Prompt Engineering", "AI-assisted Analytics"]
-  },
-  {
     "id": "tools",
     "category": "Tools & Workflow",
-    "items": ["Git & GitHub", "Vite", "Vercel", "Zod", "shadcn/ui", "Figma", "n8n", "Claude Code", "Codex CLI", "Obsidian"]
+    "items": ["Git & GitHub", "Vite", "Vercel", "Zod", "shadcn/ui", "Figma", "n8n"]
   }
 ]
