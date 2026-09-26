@@ -89,7 +89,6 @@
       "Gamification"
     ],
     "image": "/foto/genting.webp",
-    "liveUrl": "https://genting-apps.vercel.app",
     "repoUrl": "https://github.com/ghazyAlghifari508/genting-apps",
     "featured": true,
     "order": 3
@@ -317,6 +316,40 @@
     "order": 11
   },
   {
+    "id": "littlespace",
+    "title": "Littlespace",
+    "blurb": "An interactive 3D space flight simulation and planetary exploration game built with Three.js, WebGL2 procedural shaders, and realistic orbital mechanics.",
+    "description": "Littlespace (Jelajah Antariksa 3D) is an immersive browser-based spaceflight simulation and celestial exploration game. Powered by pure Three.js and custom GLSL shaders, players pilot detailed modular spacecraft across a procedurally textured solar system featuring orbital gas giants, asteroid belts, celestial stations, dynamic atmospheric re-entry, asteroid mining, and deep-space salvage missions without external assets or dependencies.",
+    "features": [
+      "Real-time 6DoF Newtonian space flight mechanics with inertia, boost thrusters, and orbital cruise navigation",
+      "Procedural planet shaders featuring dynamic atmospheric scattering, cloud layers, and planetary rings",
+      "Interactive asteroid mining with particle VFX, cargo storage, and space station docking repair systems",
+      "Comprehensive onboard telemetry, 3D tactical radar scanner, codex journal, and achievement tracking",
+      "Synthesized Web Audio sound effects engine generating real-time engine hums, thrusters, and space drones",
+      "Offline-ready Progressive Web App (PWA) with responsive mobile touch joystick controls"
+    ],
+    "role": "Game Developer & Creative Technologist",
+    "year": "2026",
+    "stack": [
+      "JavaScript",
+      "Three.js",
+      "WebGL",
+      "Web Audio API",
+      "PWA"
+    ],
+    "tags": [
+      "Game",
+      "3D",
+      "WebGL",
+      "Simulation"
+    ],
+    "image": "/foto/littlespace.webp",
+    "liveUrl": "https://littlespace-alpha.vercel.app",
+    "repoUrl": "https://github.com/ghazyAlghifari508/littlespace",
+    "featured": false,
+    "order": 12
+  },
+  {
     "id": "docrivo",
     "title": "Docrivo",
     "blurb": "A style reference generator that extracts design tokens from any website URL and generates structured DESIGN.md documents for AI coding assistants.",
@@ -348,7 +381,7 @@
     ],
     "image": "/foto/docrivo.webp",
     "featured": false,
-    "order": 12
+    "order": 13
   },
   {
     "id": "sigma",
@@ -382,6 +415,6 @@
     "image": "/foto/sigma.webp",
     "repoUrl": "https://github.com/ghazyAlghifari508/sigma",
     "featured": false,
-    "order": 13
+    "order": 14
   }
 ]
