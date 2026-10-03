@@ -433,11 +433,14 @@
     "stack": [
       "React 19",
       "TypeScript",
-      "Vite"
+      "Vite",
+      "Tailwind CSS v4",
+      "Hugeicons"
     ],
     "tags": [
       "Frontend",
-      "React"
+      "React",
+      "Web App"
     ],
     "image": "/foto/mahreen.webp",
     "featured": false,
