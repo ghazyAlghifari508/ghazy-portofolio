@@ -421,6 +421,13 @@
     "title": "Mahreen Indonesia",
     "blurb": "Modern youth empowerment & creative ecosystem web platform built for Mahreen Indonesia challenge with the theme 'Berkarya Untuk Indonesia'.",
     "description": "Mahreen Indonesia is an interactive web platform designed for the Mahreen Indonesia Frontend Developer Creative Challenge with the theme 'Berkarya Untuk Indonesia'. The platform introduces Mahreen's diverse youth-empowerment ecosystem, community programs, portfolio, and internship pathways through an accessible, highly engaging, and modern digital interface that bridges communication with the younger generation.",
+    "features": [
+      "Designed an engaging youth-centric landing page aligned with the 'Berkarya Untuk Indonesia' creative brief",
+      "Modular showcase of Mahreen's key ecosystem pillars with interactive cards and clean visual hierarchy",
+      "Comprehensive multi-page routing covering Ecosystem, Portfolio, Internship opportunities, and Organization About",
+      "Dynamic modal dialogs with backdrop blur, keyboard navigation, and refined z-index layering",
+      "Pure Tailwind CSS v4 styling with responsive mobile-first layouts, custom badges, and fluid transitions"
+    ],
     "role": "Frontend Developer",
     "year": "2026",
     "stack": [
