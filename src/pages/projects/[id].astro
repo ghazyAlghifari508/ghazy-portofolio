@@ -106,9 +106,11 @@ const projectSchema = {
     <img
       src={image}
       alt={`Preview of ${title}`}
-      width="640"
-      height="400"
-      class="w-full object-cover"
+      width="1280"
+      height="720"
+      loading="eager"
+      decoding="async"
+      class="w-full h-auto object-cover"
     />
   </div>
 
