@@ -33,7 +33,7 @@ const tags = ["All", ...new Set(projects.flatMap((p) => p.data.tags))];
           type="button"
           data-tag={t}
           aria-pressed={i === 0 ? "true" : "false"}
-          class="filter-chip min-h-9 rounded-[var(--radius-card)] px-4 text-sm font-medium text-[var(--text-primary)] transition-colors aria-pressed:bg-near-black aria-pressed:text-pure-white dark:aria-pressed:bg-electric-lime dark:aria-pressed:text-near-black"
+          class="filter-chip min-h-9 rounded-[var(--radius-card)] px-4 text-sm font-medium text-[var(--text-primary)] transition-all hover:bg-stone dark:hover:bg-[#252525] aria-pressed:bg-near-black aria-pressed:text-pure-white dark:aria-pressed:bg-electric-lime dark:aria-pressed:text-near-black"
         >
           {t}
         </button>
