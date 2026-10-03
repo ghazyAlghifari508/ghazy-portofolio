@@ -415,5 +415,25 @@
     "repoUrl": "https://github.com/ghazyAlghifari508/sigma",
     "featured": false,
     "order": 14
+  },
+  {
+    "id": "mahreen",
+    "title": "Mahreen Indonesia",
+    "blurb": "Modern youth empowerment & creative ecosystem web platform built for Mahreen Indonesia challenge with the theme 'Berkarya Untuk Indonesia'.",
+    "description": "Mahreen Indonesia is an interactive web platform designed to introduce Mahreen's youth-empowerment ecosystem, programs, and social initiatives.",
+    "role": "Frontend Developer",
+    "year": "2026",
+    "stack": [
+      "React 19",
+      "TypeScript",
+      "Vite"
+    ],
+    "tags": [
+      "Frontend",
+      "React"
+    ],
+    "image": "/foto/mahreen.webp",
+    "featured": false,
+    "order": 15
   }
 ]
