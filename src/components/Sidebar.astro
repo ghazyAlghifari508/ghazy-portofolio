@@ -92,9 +92,9 @@ const isActive = (href: string) =>
               href={l.href}
               aria-current={isActive(l.href) ? "page" : undefined}
               class:list={[
-                "flex min-h-11 items-center gap-3 rounded-[var(--radius-card)] px-4 text-[15px] font-medium transition-colors",
+                "flex min-h-11 items-center gap-3 rounded-[var(--radius-card)] px-4 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-electric-lime",
                 isActive(l.href)
-                  ? "bg-near-black text-pure-white dark:bg-electric-lime dark:text-near-black"
+                  ? "bg-near-black text-pure-white dark:bg-electric-lime dark:text-near-black shadow-xs"
                   : "text-[var(--text-primary)] hover:bg-[var(--surface-section)]",
               ]}
             >
