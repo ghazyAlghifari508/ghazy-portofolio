@@ -88,6 +88,10 @@
     margin: 0;
     min-height: 100dvh;
   }
+  ::selection {
+    background-color: var(--color-electric-lime);
+    color: var(--color-near-black);
+  }
   /* visible focus for keyboard nav (a11y) */
   :focus-visible {
     outline: 2px solid var(--color-near-black);
